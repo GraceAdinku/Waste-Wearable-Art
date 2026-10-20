@@ -36,7 +36,7 @@ CATS = {
         img="recycle-hero.jpg"),
     "repurpose": dict(name="Repurpose", line="Same object. New job.",
         lede="Repurposing gives a thing a new role without breaking it down. A thrifted jacket, a vinyl record, a deck of playing cards or a pair of old jeans becomes part of a look.",
-        img="f25-g18.jpg"),
+        img="repurpose-hero.jpg"),
 }
 FAM = {"plastic": "Plastic", "paper": "Paper", "fabric": "Fabric and denim", "mixed": "Mixed materials"}
 SHOW = [
@@ -97,7 +97,7 @@ for c, d in CATS.items():
 <p class="eyebrow">{len(items)} pieces</p>
 <h1 id="{c}-h" tabindex="-1"><span class="grad">{d["name"]}.</span> {d["line"]}</h1>
 <p class="lede">{d["lede"]}</p>
-</div><div class="cat-hero-img" aria-hidden="true"><img src="img/{d["img"]}" alt="" width="880" height="1100"></div></div></header>
+</div><div class="cat-hero-img" aria-hidden="true"><img src="img/{d["img"]}" alt="" width="{SIZE(d["img"])[0]}" height="{SIZE(d["img"])[1]}"></div></div></header>
 <div class="wrap features">{rows}</div>
 </section>'''
 

@@ -162,21 +162,20 @@ h1:focus{outline:none}
 .mats li{background:color-mix(in srgb,var(--vc,var(--re)) 12%,var(--bg-alt))}
 .sem-hero h1{background:linear-gradient(90deg,#30d158,#2997ff 50%,#ff9f0a);-webkit-background-clip:text;background-clip:text;color:transparent}
 .tile .cat-tag{display:inline-block;align-self:flex-start;padding:2px 10px;border-radius:980px;background:color-mix(in srgb,var(--c1) 14%,transparent)}
-.cat-hero-in{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.cat-hero-in{max-width:1240px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
 .cat-hero h1{font-size:clamp(48px,8.4vw,104px);line-height:.98;letter-spacing:-.045em;max-width:11em}
 .cat-hero .eyebrow{color:var(--c1)}
-.cat-hero-img{border-radius:32px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -20px color-mix(in srgb,var(--c1) 45%,transparent);animation:float-in 1.4s var(--ease) both}
-.cat-hero-img img{width:100%;height:100%;object-fit:cover}
+.cat-hero-img{border-radius:32px;overflow:hidden;box-shadow:0 30px 60px -20px color-mix(in srgb,var(--c1) 45%,transparent);animation:float-in 1.4s var(--ease) both}
+.cat-hero-img img{width:100%;height:auto;display:block}
 @keyframes float-in{from{opacity:0;transform:translateY(50px) scale(.96)}to{opacity:1;transform:none}}
 .cat-hero h1,.cat-hero .lede,.cat-hero .eyebrow{animation:float-in 1s var(--ease) both}
 .cat-hero .lede{animation-delay:.15s}
-@media (max-width:760px){.cat-hero-in{grid-template-columns:1fr}.cat-hero-img{max-width:300px;order:-1}}
+@media (max-width:760px){.cat-hero-in{grid-template-columns:1fr}.cat-hero-img{max-width:440px;width:100%;order:-1}}
 .features{display:flex;flex-direction:column;gap:clamp(72px,10vw,130px);padding-bottom:clamp(80px,10vw,140px)}
-.feature{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.feature{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
 .feature.flip .feature-media{order:2}
-.feature-media{padding:0;border:0;background:none;cursor:zoom-in;border-radius:28px;overflow:hidden;display:block;width:100%}
-.feature-media .ph{aspect-ratio:4/5}
-.feature-media img,.feature-media .ph{width:100%;height:auto;display:block;transition:transform 1.2s var(--ease)}
+.feature-media{padding:0;border:0;background:none;cursor:zoom-in;border-radius:28px;overflow:hidden;display:block;aspect-ratio:4/5;width:100%}
+.feature-media img,.feature-media .ph{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .feature-media:hover img{transform:scale(1.04)}
 .credit{margin:0;color:var(--muted);font-size:15px;font-weight:600;letter-spacing:-.01em}
 .feature h3{font-size:clamp(34px,4.4vw,56px);line-height:1.04;margin:10px 0 16px;letter-spacing:-.04em}
@@ -310,7 +309,7 @@ footer nav a:hover{text-decoration:underline}
 <img src="img/recycle-hero.jpg" alt="" width="880" height="1100" loading="lazy">
 <span class="pillar-text"><span class="pillar-name">Recycle</span><span class="pillar-line">Single use. Second life.</span>
 <span class="pillar-link">4 pieces <span aria-hidden="true">›</span></span></span></a><a class="pillar reveal" href="#repurpose" data-cat="repurpose">
-<img src="img/f25-g18.jpg" alt="" width="880" height="1100" loading="lazy">
+<img src="img/repurpose-hero.jpg" alt="" width="880" height="1100" loading="lazy">
 <span class="pillar-text"><span class="pillar-name">Repurpose</span><span class="pillar-line">Same object. New job.</span>
 <span class="pillar-link">5 pieces <span aria-hidden="true">›</span></span></span></a></div>
   </section>
@@ -446,7 +445,7 @@ footer nav a:hover{text-decoration:underline}
 <p class="eyebrow">5 pieces</p>
 <h1 id="repurpose-h" tabindex="-1"><span class="grad">Repurpose.</span> Same object. New job.</h1>
 <p class="lede">Repurposing gives a thing a new role without breaking it down. A thrifted jacket, a vinyl record, a deck of playing cards or a pair of old jeans becomes part of a look.</p>
-</div><div class="cat-hero-img" aria-hidden="true"><img src="img/f25-g18.jpg" alt="" width="880" height="1100"></div></div></header>
+</div><div class="cat-hero-img" aria-hidden="true"><img src="img/repurpose-hero.jpg" alt="" width="1300" height="2011"></div></div></header>
 <div class="wrap features"><article class="feature  reveal" id="spring-2026-group-5" aria-labelledby="spring-2026-group-5-t">
 <button class="feature-media" type="button" data-open="spring-2026-group-5" aria-label="Open Peacock Revolution"><img class="" src="img/s26-g5.jpg" alt="A model stands on the runway in a fitted black jacket with light military-style trim and wide-leg patchwork trousers in grey, tan and cream fabric pieces." width="880" height="1100" loading="lazy" decoding="async"></button>
 <div class="feature-text">
