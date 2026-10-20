@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Waste Wearable Art</title>
+<meta name="description" content="Student wearable art made from waste: upcycled, recycled and repurposed garments from PERF 156, Dress in World Cultures, Texas A&amp;M University, Spring 2023 to Spring 2026.">
+<meta property="og:title" content="Waste Wearable Art">
+<meta property="og:description" content="Trash bags, newspaper, bottle caps and old denim, rebuilt into runway fashion by students.">
+<meta property="og:image" content="img/hero.jpg">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Cpath d='M9 22c0-6 3-11 7-13 4 2 7 7 7 13' fill='none' stroke='%2330d158' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap">
+<style>
+:root{
+  --bg:#ffffff; --bg-alt:#f5f5f7; --ink:#1d1d1f; --muted:#6e6e73; --line:#d2d2d7; --card:#ffffff;
+  --nav:rgba(251,251,253,.8); --nav-ink:#1d1d1f;
+  --link:#0066cc;
+  --up:#1a7f45; --up2:#34c759; --re:#0071e3; --re2:#5ac8fa; --rp:#c2410c; --rp2:#ff9f0a;
+  --plastic:#0071e3; --paper:#9a6b2f; --fabric:#b4235a; --mixed:#5b6b1f;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.25,.1,.25,1);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#000000; --bg-alt:#101012; --ink:#f5f5f7; --muted:#a1a1a6; --line:#2c2c2e; --card:#1c1c1e;
+  --nav:rgba(22,22,23,.8); --nav-ink:#f5f5f7; --link:#2997ff;
+  --up:#30d158; --re:#2997ff; --rp:#ff9f0a;
+  --plastic:#64b5ff; --paper:#e0b072; --fabric:#ff6fa3; --mixed:#b8cc6a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#000000; --bg-alt:#101012; --ink:#f5f5f7; --muted:#a1a1a6; --line:#2c2c2e; --card:#1c1c1e;
+  --nav:rgba(22,22,23,.8); --nav-ink:#f5f5f7; --link:#2997ff;
+  --up:#30d158; --re:#2997ff; --rp:#ff9f0a;
+  --plastic:#64b5ff; --paper:#e0b072; --fabric:#ff6fa3; --mixed:#b8cc6a; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.47;letter-spacing:-.022em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--link)}
+button{font:inherit;color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(22px,env(safe-area-inset-left));padding-right:max(22px,env(safe-area-inset-right))}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--bg);color:var(--ink);padding:8px 14px;border-radius:8px}
+.skip:focus{left:12px}
+:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:4px}
+[hidden]{display:none!important}
+
+/* Global nav */
+.gnav{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent);padding-top:env(safe-area-inset-top)}
+.gnav .wrap{display:flex;align-items:center;gap:8px;height:52px;max-width:1080px}
+.brand{font-weight:600;font-size:15px;color:var(--nav-ink);text-decoration:none;white-space:nowrap;margin-right:auto;display:flex;align-items:center;gap:8px}
+.brand svg{width:20px;height:20px;flex:none}
+.gnav nav{min-width:0}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin:0;padding:0;list-style:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{display:block;padding:7px 12px;border-radius:980px;font-size:13.5px;color:var(--nav-ink);opacity:.8;text-decoration:none;white-space:nowrap;transition:background .2s var(--ease),opacity .2s}
+.tabs a:hover{opacity:1}
+.tabs a[aria-current="page"]{opacity:1;background:color-mix(in srgb,var(--ink) 9%,transparent);font-weight:600}
+@media (max-width:640px){
+  .gnav .wrap{flex-wrap:wrap;height:auto;padding-top:8px;gap:0}
+  .brand{width:100%;justify-content:center;padding-bottom:4px}
+  .gnav nav{width:100%}
+  .tabs{width:100%;justify-content:space-between}
+  .tabs a{padding:8px 7px;font-size:12.5px}
+}
+
+/* Shared type */
+.eyebrow{font-size:17px;font-weight:600;color:var(--muted);margin:0 0 10px;letter-spacing:-.01em}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.03em;text-wrap:balance}
+h1:focus{outline:none}
+.lede{font-size:clamp(19px,2.2vw,24px);line-height:1.35;color:var(--muted);font-weight:500;max-width:34em;margin:18px 0 0;letter-spacing:-.02em}
+.grad{background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-cat="upcycle"]{--c1:var(--up);--c2:var(--up2)}
+[data-cat="recycle"]{--c1:var(--re);--c2:var(--re2)}
+[data-cat="repurpose"]{--c1:var(--rp);--c2:var(--rp2)}
+
+/* Reveal on scroll */
+.reveal{opacity:.25;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+
+/* Hero */
+.hero{position:relative;height:100svh;min-height:560px;background:#000;color:#f5f5f7;overflow:hidden;display:flex;align-items:flex-end}
+.hero-img{position:absolute;inset:0;transform:scale(calc(1.12 - var(--p,0) * .12));transform-origin:50% 40%;will-change:transform}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,.45) 50%,rgba(0,0,0,.94) 100%)}
+.hero-text{position:relative;z-index:1;padding-bottom:max(64px,9vh);width:100%;opacity:calc(1 - var(--p,0) * 1.6);transform:translateY(calc(var(--p,0) * -60px))}
+.hero .eyebrow{color:#d2d2d7}
+.hero h1{font-size:clamp(56px,11vw,128px);line-height:.95;letter-spacing:-.045em}
+.hero p.sub{font-size:clamp(20px,2.4vw,28px);line-height:1.25;font-weight:500;max-width:22em;margin:18px 0 26px;color:#e8e8ed;letter-spacing:-.02em}
+.cta{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border-radius:980px;background:#0071e3;color:#fff;text-decoration:none;font-size:17px;font-weight:500}
+.btn:hover{background:#0077ed}
+.tlink{color:#2997ff;text-decoration:none;font-size:19px}
+.tlink:hover{text-decoration:underline}
+.scroll-cue{position:absolute;z-index:1;left:50%;bottom:18px;transform:translateX(-50%);width:22px;height:34px;border:2px solid rgba(255,255,255,.5);border-radius:12px;opacity:calc(1 - var(--p,0) * 4)}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:6px;width:4px;height:7px;margin-left:-2px;border-radius:2px;background:#fff;animation:cue 1.8s infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+
+/* Word-by-word statement */
+.statement{background:#000;color:#f5f5f7;height:240vh;position:relative}
+.statement .sticky{position:sticky;top:0;height:100svh;display:flex;align-items:center}
+.statement p{font-size:clamp(30px,5.2vw,64px);line-height:1.12;font-weight:700;letter-spacing:-.035em;margin:0;max-width:16em}
+.statement .w{color:#3a3a3c;transition:color .35s var(--ease)}
+.statement .w.on{color:#f5f5f7}
+.statement .w.hl.on{background:linear-gradient(90deg,#30d158,#5ac8fa,#ff9f0a);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Sections */
+.section{padding:clamp(80px,12vw,150px) 0}
+.section.alt{background:var(--bg-alt)}
+.section-head{text-align:center;margin-bottom:clamp(40px,6vw,70px)}
+.section-head h2{font-size:clamp(40px,6.4vw,80px);line-height:1.02}
+.section-head .lede{margin-left:auto;margin-right:auto}
+
+/* Pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1240px;margin:0 auto;padding:0 max(22px,env(safe-area-inset-left))}
+.pillar{position:relative;display:block;border-radius:28px;overflow:hidden;aspect-ratio:3/4.4;background:#000;color:#fff;text-decoration:none;isolation:isolate}
+.pillar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);z-index:-1}
+.pillar:hover img{transform:scale(1.05)}
+.pillar::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.35) 60%,rgba(0,0,0,.88) 100%);z-index:-1}
+.pillar-text{position:absolute;inset:0;padding:30px 28px;display:flex;flex-direction:column;justify-content:flex-end}
+.pillar-name{font-size:clamp(32px,3.6vw,44px);font-weight:700;letter-spacing:-.035em;line-height:1}
+.pillar-line{font-size:19px;font-weight:500;margin-top:8px;color:#e8e8ed}
+.pillar-link{margin-top:20px;font-size:17px;font-weight:500;display:inline-flex;align-items:center;gap:6px;align-self:flex-start;padding:10px 18px;border-radius:980px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.pillar:nth-child(2){transition-delay:.1s}.pillar:nth-child(3){transition-delay:.2s}
+@media (max-width:820px){.pillars{grid-template-columns:1fr;max-width:520px}.pillar{aspect-ratio:4/4.6}}
+
+/* Numbers */
+.numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.numbers div{padding:8px}
+.numbers strong{display:block;font-size:clamp(56px,8vw,96px);font-weight:700;letter-spacing:-.05em;line-height:1}
+.numbers span{display:block;margin-top:8px;color:var(--muted);font-size:19px;font-weight:500}
+@media (max-width:560px){.numbers{grid-template-columns:1fr;gap:36px}}
+
+/* Gallery */
+.gallery{list-style:none;margin:0;padding:0 max(22px,calc((100vw - 1040px)/2));display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-padding:0 max(22px,calc((100vw - 1040px)/2))}
+.gallery::-webkit-scrollbar{display:none}
+.gallery li{flex:0 0 min(82vw,720px);scroll-snap-align:start}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;background:#111}
+.gallery figcaption{margin-top:14px;color:var(--muted);font-size:17px;max-width:36em}
+.gallery figcaption strong{color:var(--ink);font-weight:600}
+.gal-ctrl{display:flex;justify-content:flex-end;gap:12px;margin-top:22px}
+.gal-ctrl button{width:44px;height:44px;border-radius:50%;border:0;background:color-mix(in srgb,var(--ink) 10%,transparent);cursor:pointer;font-size:22px;line-height:1;display:grid;place-items:center}
+.gal-ctrl button:hover{background:color-mix(in srgb,var(--ink) 16%,transparent)}
+
+/* About */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px)}
+.about h2{font-size:clamp(32px,4vw,48px);line-height:1.08;margin-bottom:16px}
+.about p{color:var(--muted);font-size:19px;margin:0 0 14px}
+.about p strong{color:var(--ink);font-weight:600}
+.pills{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:20px 0 0}
+.pills li{padding:6px 14px;border-radius:980px;background:var(--card);border:1px solid var(--line);font-size:15px}
+@media (max-width:760px){.about{grid-template-columns:1fr}}
+
+/* Category views */
+.cat-hero{padding:clamp(56px,8vw,110px) 0 clamp(60px,8vw,110px);background:radial-gradient(90% 120% at 85% 20%,color-mix(in srgb,var(--c2) 26%,transparent) 0%,transparent 60%),radial-gradient(70% 90% at 0% 100%,color-mix(in srgb,var(--c1) 18%,transparent) 0%,transparent 60%)}
+.view[data-view="upcycle"],.view[data-view="recycle"],.view[data-view="repurpose"]{background:linear-gradient(180deg,transparent 0,color-mix(in srgb,var(--vc) 7%,var(--bg)) 40%,var(--bg) 100%)}
+.view[data-view="upcycle"]{--vc:var(--up)}.view[data-view="recycle"]{--vc:var(--re)}.view[data-view="repurpose"]{--vc:var(--rp)}
+.feature h3{background:linear-gradient(90deg,var(--ink),color-mix(in srgb,var(--vc) 70%,var(--ink)));-webkit-background-clip:text;background-clip:text;color:transparent}
+.mats li{background:color-mix(in srgb,var(--vc,var(--re)) 12%,var(--bg-alt))}
+.sem-hero h1{background:linear-gradient(90deg,#30d158,#2997ff 50%,#ff9f0a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tile .cat-tag{display:inline-block;align-self:flex-start;padding:2px 10px;border-radius:980px;background:color-mix(in srgb,var(--c1) 14%,transparent)}
+.cat-hero-in{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.cat-hero h1{font-size:clamp(48px,8.4vw,104px);line-height:.98;letter-spacing:-.045em;max-width:11em}
+.cat-hero .eyebrow{color:var(--c1)}
+.cat-hero-img{border-radius:32px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -20px color-mix(in srgb,var(--c1) 45%,transparent);animation:float-in 1.4s var(--ease) both}
+.cat-hero-img img{width:100%;height:100%;object-fit:cover}
+@keyframes float-in{from{opacity:0;transform:translateY(50px) scale(.96)}to{opacity:1;transform:none}}
+.cat-hero h1,.cat-hero .lede,.cat-hero .eyebrow{animation:float-in 1s var(--ease) both}
+.cat-hero .lede{animation-delay:.15s}
+@media (max-width:760px){.cat-hero-in{grid-template-columns:1fr}.cat-hero-img{max-width:300px;order:-1}}
+.features{display:flex;flex-direction:column;gap:clamp(72px,10vw,130px);padding-bottom:clamp(80px,10vw,140px)}
+.feature{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.feature.flip .feature-media{order:2}
+.feature-media{padding:0;border:0;background:none;cursor:zoom-in;border-radius:28px;overflow:hidden;display:block;aspect-ratio:4/5;width:100%}
+.feature-media img,.feature-media .ph{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.feature-media:hover img{transform:scale(1.04)}
+.credit{margin:0;color:var(--muted);font-size:15px;font-weight:600;letter-spacing:-.01em}
+.feature h3{font-size:clamp(34px,4.4vw,56px);line-height:1.04;margin:10px 0 16px;letter-spacing:-.04em}
+.blurb{font-size:clamp(19px,1.8vw,21px);line-height:1.4;margin:0 0 22px;color:var(--ink);opacity:.86}
+.mats{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 24px;padding:0}
+.mats li{padding:6px 14px;border-radius:980px;background:var(--bg-alt);font-size:14px;font-weight:500;color:var(--ink)}
+.more{border:0;background:none;padding:6px 0;color:var(--link);font-size:19px;cursor:pointer}
+.more:hover{text-decoration:underline}
+@media (max-width:760px){.feature{grid-template-columns:1fr}.feature.flip .feature-media{order:0}}
+
+/* Placeholder for pieces without photos */
+.ph{display:flex;flex-direction:column;justify-content:flex-end;padding:28px;text-align:left;color:#fff;
+  background:radial-gradient(120% 80% at 20% 10%,color-mix(in srgb,var(--fc) 70%,#fff) 0%,var(--fc) 45%,color-mix(in srgb,var(--fc) 40%,#000) 100%)}
+.ph span{font-size:clamp(30px,4vw,48px);font-weight:700;letter-spacing:-.04em;line-height:1}
+.ph small{font-size:14px;opacity:.85;margin-top:8px;font-weight:500}
+.ph[data-fam="plastic"]{--fc:#0a5bb8}.ph[data-fam="paper"]{--fc:#8a5a22}.ph[data-fam="fabric"]{--fc:#a0204f}.ph[data-fam="mixed"]{--fc:#4d5c18}
+
+/* Semesters view */
+.sem-hero{padding:clamp(70px,10vw,120px) 0 30px;text-align:center}
+.sem-hero h1{font-size:clamp(48px,8vw,96px);line-height:1;letter-spacing:-.045em}
+.sem-hero .lede{margin-left:auto;margin-right:auto}
+.switch{position:sticky;top:calc(53px + env(safe-area-inset-top));z-index:10;padding:14px 0;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+@media (max-width:640px){.switch{top:calc(70px + env(safe-area-inset-top))}}
+.seg{display:flex;width:max-content;max-width:100%;margin:0 auto;padding:4px;border-radius:980px;background:color-mix(in srgb,var(--ink) 8%,transparent);overflow-x:auto;scrollbar-width:none}
+.seg button{border:0;background:none;padding:10px 22px;border-radius:980px;font-size:17px;font-weight:600;cursor:pointer;color:var(--muted);min-height:44px;transition:background .25s var(--ease),color .25s}
+.seg button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.terms{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:28px 0 8px}
+.terms button{border:1px solid var(--line);background:none;border-radius:980px;padding:8px 20px;min-height:44px;font-size:16px;font-weight:500;cursor:pointer;color:var(--ink)}
+.terms button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.term-head{text-align:center;color:var(--muted);margin:24px 0 32px;font-size:17px}
+.term-head strong{display:block;color:var(--ink);font-size:clamp(32px,4.4vw,48px);letter-spacing:-.04em;margin-bottom:4px}
+.tiles{list-style:none;margin:0;padding:0 0 clamp(80px,10vw,130px);display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:22px}
+.tile button{display:flex;flex-direction:column;justify-content:flex-start;width:100%;padding:0;border:0;background:var(--card);border-radius:24px;overflow:hidden;text-align:left;cursor:pointer;box-shadow:0 4px 24px rgba(0,0,0,.06);transition:transform .5s var(--ease),box-shadow .5s var(--ease);height:100%}
+.tile button:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 18px 40px rgba(0,0,0,.14)}
+.tile img,.tile .ph{width:100%;aspect-ratio:4/5;object-fit:cover}
+.tile-cap{display:flex;flex-direction:column;gap:4px;padding:18px 20px 22px}
+.tile-cap strong{font-size:21px;letter-spacing:-.03em;line-height:1.2}
+.cat-tag{font-size:13px;font-weight:600;color:var(--c1)}
+.year .tile:nth-child(2){transition-delay:.08s}.year .tile:nth-child(3){transition-delay:.16s}.year .tile:nth-child(4){transition-delay:.24s}.year .tile:nth-child(5){transition-delay:.32s}
+
+/* Detail sheet */
+dialog.sheet{border:0;padding:0;margin:auto;width:min(1000px,calc(100vw - 32px));max-height:calc(100svh - 48px);border-radius:28px;background:var(--card);color:var(--ink);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog.sheet::backdrop{background:rgba(0,0,0,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+dialog.sheet[open]{animation:pop .45s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}
+.sheet-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);max-height:calc(100svh - 48px)}
+.sheet-media{background:#000;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;position:relative}
+.sheet-media::-webkit-scrollbar{display:none}
+.sheet-media img,.sheet-media .ph{flex:0 0 100%;width:100%;height:100%;max-height:calc(100svh - 48px);object-fit:cover;scroll-snap-align:start;aspect-ratio:4/5}
+.sheet-body{padding:44px 40px 40px;overflow-y:auto}
+.sheet-body h2{font-size:clamp(30px,3.4vw,40px);line-height:1.06;margin:8px 0 14px;letter-spacing:-.04em}
+.sheet-body h4{margin:26px 0 8px;font-size:15px;color:var(--muted);font-weight:600}
+.sheet-body p{margin:0}
+.sheet-body .concept{font-size:17px;color:var(--ink);opacity:.86}
+.close{position:absolute;top:14px;right:14px;z-index:2;width:36px;height:36px;border-radius:50%;border:0;background:color-mix(in srgb,var(--ink) 12%,var(--card));cursor:pointer;font-size:20px;line-height:1;display:grid;place-items:center}
+.dots{display:flex;gap:6px;margin-top:10px}
+.dots span{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.dots span.on{background:var(--ink)}
+@media (max-width:760px){
+  dialog.sheet{width:100vw;max-width:100vw;max-height:94svh;margin:auto 0 0;border-radius:24px 24px 0 0}
+  .sheet-in{grid-template-columns:1fr;overflow-y:auto;max-height:94svh}
+  .sheet-media img,.sheet-media .ph{max-height:62svh}
+  .sheet-body{overflow:visible;padding:28px 22px calc(32px + env(safe-area-inset-bottom))}
+}
+
+/* Footer */
+footer{background:var(--bg-alt);color:var(--muted);font-size:13px;padding:28px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+footer p{margin:0 0 8px;max-width:70em}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:12px}
+footer nav a{color:var(--ink);text-decoration:none}
+footer nav a:hover{text-decoration:underline}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .hero-img,.hero-text{transform:none!important;opacity:1!important}
+  .statement{height:auto}.statement .sticky{position:static;height:auto;padding:110px 0}.statement .w{color:#f5f5f7}
+}
+</style>
+</head>
+<body class="no-js">
+<a class="skip" href="#main">Skip to content</a>
+<header class="gnav">
+  <div class="wrap">
+    <a class="brand" href="#overview" aria-label="Waste Wearable Art, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M9 23c0-6.5 3-11.5 7-14 4 2.5 7 7.5 7 14" fill="none" stroke="#30d158" stroke-width="2.8" stroke-linecap="round"/></svg>
+      Waste Wearable Art
+    </a>
+    <nav aria-label="Sections">
+      <ul class="tabs">
+        <li><a href="#overview" data-tab="overview">Overview</a></li>
+        <li><a href="#upcycle" data-tab="upcycle">Upcycle</a></li>
+        <li><a href="#recycle" data-tab="recycle">Recycle</a></li>
+        <li><a href="#repurpose" data-tab="repurpose">Repurpose</a></li>
+        <li><a href="#semesters" data-tab="semesters">Semesters</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="view" data-view="overview" aria-labelledby="ov-h">
+  <div class="hero" id="hero">
+    <div class="hero-img"><img src="img/hero.jpg" alt="A student model in a white gown of fan-folded newspaper walks the runway between rows of seated classmates, one arm raised." width="2400" height="1350" fetchpriority="high"></div>
+    <div class="hero-text"><div class="wrap">
+      <p class="eyebrow">PERF 156 · Dress in World Cultures · Texas A&amp;M University</p>
+      <h1 id="ov-h" tabindex="-1">Waste, worn.</h1>
+      <p class="sub">Trash bags, newspaper, bottle caps and old denim, rebuilt into runway fashion by students.</p>
+      <div class="cta"><a class="btn" href="#upcycle">Explore the work</a><a class="tlink" href="#semesters">Browse by semester ›</a></div>
+    </div></div>
+    <span class="scroll-cue" aria-hidden="true"></span>
+  </div>
+
+  <div class="statement" id="statement">
+    <div class="sticky"><div class="wrap">
+      <p id="words">Every piece starts as something someone threw away. A trash bag. A newspaper. A deck of cards. A pair of jeans nobody wanted. Students research a question about culture or the planet, then answer it in material and walk it down the runway. *Upcycled. *Recycled. *Repurposed.</p>
+    </div></div>
+  </div>
+
+  <section class="section" aria-labelledby="three-h">
+    <div class="wrap section-head reveal">
+      <h2 id="three-h">Three ways to<br>rethink waste.</h2>
+      <p class="lede">Every garment in the archive falls into one of three approaches. Pick one to explore.</p>
+    </div>
+    <div class="pillars"><a class="pillar reveal" href="#upcycle" data-cat="upcycle">
+<img src="img/s26-g16a.jpg" alt="" width="880" height="1100" loading="lazy">
+<span class="pillar-text"><span class="pillar-name">Upcycle</span><span class="pillar-line">Waste, elevated.</span>
+<span class="pillar-link">5 pieces <span aria-hidden="true">›</span></span></span></a><a class="pillar reveal" href="#recycle" data-cat="recycle">
+<img src="img/recycle-hero.jpg" alt="" width="880" height="1100" loading="lazy">
+<span class="pillar-text"><span class="pillar-name">Recycle</span><span class="pillar-line">Single use. Second life.</span>
+<span class="pillar-link">4 pieces <span aria-hidden="true">›</span></span></span></a><a class="pillar reveal" href="#repurpose" data-cat="repurpose">
+<img src="img/f25-g18a.jpg" alt="" width="880" height="1100" loading="lazy">
+<span class="pillar-text"><span class="pillar-name">Repurpose</span><span class="pillar-line">Same object. New job.</span>
+<span class="pillar-link">5 pieces <span aria-hidden="true">›</span></span></span></a></div>
+  </section>
+
+  <section class="section alt" aria-label="The archive in numbers">
+    <div class="wrap numbers reveal">
+      <div><strong>14</strong><span>runway pieces</span></div>
+      <div><strong>6</strong><span>semesters</span></div>
+      <div><strong>4</strong><span>years of runway shows</span></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="show-h">
+    <div class="wrap section-head reveal">
+      <h2 id="show-h">On the runway.</h2>
+      <p class="lede">Each semester ends with a runway show, where groups present the garment and the story behind it.</p>
+    </div>
+    <ul class="gallery" id="gallery" aria-label="Runway show photos" tabindex="0"><li><figure><img src="img/show-f25-train.jpg" alt="A model in a blue and white plastic gown with a long train stands in front of a seated audience." loading="lazy" width="1200" height="900">
+<figcaption><strong>Fall 2025</strong> A plastic gown with a long painted train sweeps the floor.</figcaption></figure></li><li><figure><img src="img/show-s24-hat.jpg" alt="A performer in a red top hat, red sleeves and white trousers with a sash of crumpled material strikes a pose on stage." loading="lazy" width="1200" height="900">
+<figcaption><strong>Spring 2024</strong> A red top hat and a sash of reused material take the stage.</figcaption></figure></li><li><figure><img src="img/show-s24-group.jpg" alt="Students and their instructor gather on stage in their finished garments beneath a projected runway show poster." loading="lazy" width="1200" height="900">
+<figcaption><strong>Spring 2024</strong> The whole class on stage after the show.</figcaption></figure></li></ul>
+    <div class="wrap gal-ctrl"><button type="button" data-g="-1" aria-label="Previous photo">‹</button><button type="button" data-g="1" aria-label="Next photo">›</button></div>
+  </section>
+
+  <section class="section alt" aria-label="About the course">
+    <div class="wrap about">
+      <div class="reveal">
+        <h2>About the course.</h2>
+        <p>In <strong>PERF 156: Dress in World Cultures</strong>, students study dress as more than fashion. Clothing becomes a way to understand how people across the world express identity, culture, belonging, memory, status and change.</p>
+        <p>Through discussion, research, reflection and hands-on making, students examine what dress means in global contexts while building critical thinking and intercultural communication skills.</p>
+      </div>
+      <div class="reveal">
+        <h2>The Waste Wearable Art project.</h2>
+        <p>A collaborative project on fashion, sustainability and climate awareness. Groups source discarded materials, develop a concept, build the garment and present it at the end-of-semester runway show.</p>
+        <p>Instructor <strong>Dr. Grace Adinku</strong>, Theatre &amp; Performance Studies.</p>
+        <ul class="pills" aria-label="Topics"><li>Performance</li><li>Fashion</li><li>Culture</li><li>Identity</li><li>Sustainability</li><li>Global perspectives</li></ul>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="view" data-view="upcycle" aria-labelledby="upcycle-h" hidden>
+<header class="cat-hero" data-cat="upcycle">
+<div class="wrap cat-hero-in"><div>
+<p class="eyebrow">5 pieces</p>
+<h1 id="upcycle-h" tabindex="-1"><span class="grad">Upcycle.</span> Waste, elevated.</h1>
+<p class="lede">Upcycling turns something discarded into something worth more than it ever was. Newspaper becomes a gala gown. Shower curtains become a coral reef.</p>
+</div><div class="cat-hero-img" aria-hidden="true"><img src="img/s26-g16a.jpg" alt="" width="880" height="1100"></div></div></header>
+<div class="wrap features"><article class="feature  reveal" id="spring-2026-group-1" aria-labelledby="spring-2026-group-1-t">
+<button class="feature-media" type="button" data-open="spring-2026-group-1" aria-label="Open Four Seasons Leaf Gown"><img class="" src="img/s26-g1.jpg" alt="A model walks the runway in a floor-length gown with tiered paper ruffles shading from white at the waist through green to tan and brown at the hem, with cut paper leaves layered over the shoulders and bodice." width="880" height="1100" loading="lazy" decoding="async"></button>
+<div class="feature-text">
+<p class="credit">Group 1 · Spring 2026</p>
+<h3 id="spring-2026-group-1-t">Four Seasons Leaf Gown</h3>
+<p class="blurb">An upcycled “leaf” gown that moves through the four seasons, showing materials cycling through birth, transformation and decay instead of being thrown away after one use.</p>
+<ul class="mats" aria-label="Materials"><li>Cardboard</li><li>Newspaper</li><li>Papier-mâché</li><li>Paper leaves</li><li>Tape</li></ul>
+<button class="more" type="button" data-open="spring-2026-group-1">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article><article class="feature flip reveal" id="spring-2026-group-16" aria-labelledby="spring-2026-group-16-t">
+<button class="feature-media" type="button" data-open="spring-2026-group-16" aria-label="Open Newspaper Gala"><img class="" src="img/s26-g16a.jpg" alt="A model walks under a clear umbrella covered with newspaper, wearing a newspaper gown whose bell-shaped skirt is studded with rolled paper rosettes in pink, teal, purple, yellow and grey." width="880" height="1100" loading="lazy" decoding="async"></button>
+<div class="feature-text">
+<p class="credit">Group 16 · Spring 2026</p>
+<h3 id="spring-2026-group-16-t">Newspaper Gala</h3>
+<p class="blurb">A formal gala gown made of newspaper that takes on deforestation and landfill overflow by giving paper one more life before it is gone.</p>
+<ul class="mats" aria-label="Materials"><li>Newspaper</li><li>Paper</li><li>Paper rosettes</li><li>Reused umbrella</li></ul>
+<button class="more" type="button" data-open="spring-2026-group-16">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article><article class="feature  reveal" id="fall-2025-group-19" aria-labelledby="fall-2025-group-19-t">
+<button class="feature-media" type="button" data-open="fall-2025-group-19" aria-label="Open Second Life: Newspaper in Motion"><img class="" src="img/f25-g19.jpg" alt="A model in a white dress of layered, fan-folded newspaper tiers raises a paper wand and holds a pleated paper fan, walking a runway between rows of seated audience." width="880" height="1100" loading="lazy" decoding="async"></button>
+<div class="feature-text">
+<p class="credit">Group 19 · Fall 2025</p>
+<h3 id="fall-2025-group-19-t">Second Life: Newspaper in Motion</h3>
+<p class="blurb">An upcycled newspaper dress with a sculptural fan, combining garment construction with experimental materials for a structured, theatrical silhouette.</p>
+<ul class="mats" aria-label="Materials"><li>Recycled newspaper</li><li>Paper bags</li><li>Wire</li><li>Felt</li><li>Upcycled corset</li></ul>
+<button class="more" type="button" data-open="fall-2025-group-19">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article><article class="feature flip reveal" id="spring-2025-group-20" aria-labelledby="spring-2025-group-20-t">
+<button class="feature-media" type="button" data-open="spring-2025-group-20" aria-label="Open Drowned in Plastic"><img class="" src="img/s25-g20.jpg" alt="A model poses on stage in a teal satin wrap over a dress covered in clear, curling plastic ribbons and sparkling scales that catch the blue stage light." width="880" height="1100" loading="lazy" decoding="async"></button>
+<div class="feature-text">
+<p class="credit">Group 20 · Spring 2025</p>
+<h3 id="spring-2025-group-20-t">Drowned in Plastic</h3>
+<p class="blurb">A marine-inspired garment that looks beautiful from a distance and troubling up close, revealing sea life overwhelmed by human waste.</p>
+<ul class="mats" aria-label="Materials"><li>Plastic bags</li><li>Plastic bottles</li><li>Discarded plastics</li></ul>
+<button class="more" type="button" data-open="spring-2025-group-20">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article><article class="feature  reveal" id="spring-2024-group-9" aria-labelledby="spring-2024-group-9-t">
+<button class="feature-media" type="button" data-open="spring-2024-group-9" aria-label="Open Coral Under Threat"><img class="" src="img/s24-g9.jpg" alt="A model stands on a dark stage in a strapless gown with a full skirt of clear, shimmering plastic over ruffled red coral-like layers, lit in blue and pink." width="880" height="1100" loading="lazy" decoding="async"></button>
+<div class="feature-text">
+<p class="credit">Group 9 · Spring 2024</p>
+<h3 id="spring-2024-group-9-t">Coral Under Threat</h3>
+<p class="blurb">A coral-reef gown with a structured hoop skirt, corset top and coral crown, made from household plastics to show how fragile marine life is.</p>
+<ul class="mats" aria-label="Materials"><li>Plastic tablecloths</li><li>Shower curtains</li><li>Wire</li><li>Wax paper</li><li>Cardboard</li><li>Ribbon</li><li>Hot glue</li></ul>
+<button class="more" type="button" data-open="spring-2024-group-9">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article></div>
+</section><section class="view" data-view="recycle" aria-labelledby="recycle-h" hidden>
+<header class="cat-hero" data-cat="recycle">
+<div class="wrap cat-hero-in"><div>
+<p class="eyebrow">4 pieces</p>
+<h1 id="recycle-h" tabindex="-1"><span class="grad">Recycle.</span> Single use. Second life.</h1>
+<p class="lede">Recycling takes throwaway plastics such as shopping bags, bottles, straws and caps, and puts them back into the cycle as yarn, scales and sea foam.</p>
+</div><div class="cat-hero-img" aria-hidden="true"><img src="img/recycle-hero.jpg" alt="" width="880" height="1100"></div></div></header>
+<div class="wrap features"><article class="feature  reveal" id="spring-2026-group-12" aria-labelledby="spring-2026-group-12-t">
+<button class="feature-media" type="button" data-open="spring-2026-group-12" aria-label="Open What the Ocean Keeps"><img class="" src="img/s26-g12.jpg" alt="A smiling model poses with a hand on her hip in a dark, glossy plastic bodice with bottle-label straps and a full skirt of crumpled clear and silver plastic that glows orange and yellow near the waist." width="880" height="1100" loading="lazy" decoding="async"></button>
+<div class="feature-text">
+<p class="credit">Group 12 · Spring 2026</p>
+<h3 id="spring-2026-group-12-t">What the Ocean Keeps</h3>
+<p class="blurb">A garment that shows how everyday choices add up to plastic waste in our oceans, and how that trash keeps harming marine life long after it is thrown away.</p>
+<ul class="mats" aria-label="Materials"><li>Plastic bags</li><li>Plastic bottles</li><li>Duct tape</li><li>Plastic film</li></ul>
+<button class="more" type="button" data-open="spring-2026-group-12">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article><article class="feature flip reveal" id="spring-2025-group-13" aria-labelledby="spring-2025-group-13-t">
+<button class="feature-media" type="button" data-open="spring-2025-group-13" aria-label="Open Tides of Plastic"><div class="ph " data-fam="plastic" role="img" aria-label="Photo coming soon"><span>Plastic</span><small>Runway photo coming soon</small></div></button>
+<div class="feature-text">
+<p class="credit">Group 13 · Spring 2025</p>
+<h3 id="spring-2025-group-13-t">Tides of Plastic</h3>
+<p class="blurb">Inspired by the Great Pacific Garbage Patch, a crocheted mesh dress made from plastic bag yarn that looks like the fishing nets polluting the ocean.</p>
+<ul class="mats" aria-label="Materials"><li>Plastic shopping bags</li><li>Plastic bag yarn</li><li>Water bottles</li></ul>
+<button class="more" type="button" data-open="spring-2025-group-13">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article><article class="feature  reveal" id="spring-2023-group-21" aria-labelledby="spring-2023-group-21-t">
+<button class="feature-media" type="button" data-open="spring-2023-group-21" aria-label="Open Ocean in Distress"><div class="ph " data-fam="plastic" role="img" aria-label="Photo coming soon"><span>Plastic</span><small>Runway photo coming soon</small></div></button>
+<div class="feature-text">
+<p class="credit">Group 21 · Spring 2023</p>
+<h3 id="spring-2023-group-21-t">Ocean in Distress</h3>
+<p class="blurb">A layered, ruffled trash-bag dress in ocean blues and whites that evokes moving water while drawing attention to plastic pollution.</p>
+<ul class="mats" aria-label="Materials"><li>Blue and white trash bags</li><li>Duct tape</li><li>Drawstrings</li><li>Fairy lights</li></ul>
+<button class="more" type="button" data-open="spring-2023-group-21">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article><article class="feature flip reveal" id="spring-2023-group-22" aria-labelledby="spring-2023-group-22-t">
+<button class="feature-media" type="button" data-open="spring-2023-group-22" aria-label="Open Polluted Waters, Living Forms"><div class="ph " data-fam="mixed" role="img" aria-label="Photo coming soon"><span>Mixed materials</span><small>Runway photo coming soon</small></div></button>
+<div class="feature-text">
+<p class="credit">Group 22 · Spring 2023</p>
+<h3 id="spring-2023-group-22-t">Polluted Waters, Living Forms</h3>
+<p class="blurb">A fish-inspired dress built on a thrifted gown, with bottle caps as scales and plastic straws forming a sculptural shell and tail.</p>
+<ul class="mats" aria-label="Materials"><li>Plastic bottle caps</li><li>Plastic straws</li><li>Plastic wrap</li><li>Thrifted dress</li></ul>
+<button class="more" type="button" data-open="spring-2023-group-22">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article></div>
+</section><section class="view" data-view="repurpose" aria-labelledby="repurpose-h" hidden>
+<header class="cat-hero" data-cat="repurpose">
+<div class="wrap cat-hero-in"><div>
+<p class="eyebrow">5 pieces</p>
+<h1 id="repurpose-h" tabindex="-1"><span class="grad">Repurpose.</span> Same object. New job.</h1>
+<p class="lede">Repurposing gives a thing a new role without breaking it down. A thrifted jacket, a vinyl record, a deck of playing cards or a pair of old jeans becomes part of a look.</p>
+</div><div class="cat-hero-img" aria-hidden="true"><img src="img/f25-g18a.jpg" alt="" width="880" height="1100"></div></div></header>
+<div class="wrap features"><article class="feature  reveal" id="spring-2026-group-5" aria-labelledby="spring-2026-group-5-t">
+<button class="feature-media" type="button" data-open="spring-2026-group-5" aria-label="Open Peacock Revolution"><img class="" src="img/s26-g5.jpg" alt="A model stands on the runway in a fitted black jacket with light military-style trim and wide-leg patchwork trousers in grey, tan and cream fabric pieces." width="880" height="1100" loading="lazy" decoding="async"></button>
+<div class="feature-text">
+<p class="credit">Group 5 · Spring 2026</p>
+<h3 id="spring-2026-group-5-t">Peacock Revolution</h3>
+<p class="blurb">A take on 1970s men’s fashion, the era called the “Peacock Revolution,” when menswear turned bold, playful and less strictly masculine.</p>
+<ul class="mats" aria-label="Materials"><li>Upcycled garments</li><li>Fabric scraps</li><li>Synthetic fabrics</li></ul>
+<button class="more" type="button" data-open="spring-2026-group-5">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article><article class="feature flip reveal" id="spring-2026-group-19" aria-labelledby="spring-2026-group-19-t">
+<button class="feature-media" type="button" data-open="spring-2026-group-19" aria-label="Open Denim Tide"><img class="" src="img/s26-g19a.jpg" alt="A model in a strapless patchwork denim mini dress in several shades of blue, with white boots and a flower crown, swirls a long train of dark blue and white fabric behind her." width="880" height="1100" loading="lazy" decoding="async"></button>
+<div class="feature-text">
+<p class="credit">Group 19 · Spring 2026</p>
+<h3 id="spring-2026-group-19-t">Denim Tide</h3>
+<p class="blurb">A two-part denim gown made entirely from repurposed denim from students’ own closets and community donations, created by first-time makers.</p>
+<ul class="mats" aria-label="Materials"><li>Repurposed denim</li><li>Donated jeans</li><li>Sheer fabric</li></ul>
+<button class="more" type="button" data-open="spring-2026-group-19">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article><article class="feature  reveal" id="fall-2025-group-18" aria-labelledby="fall-2025-group-18-t">
+<button class="feature-media" type="button" data-open="fall-2025-group-18" aria-label="Open Throwback to the Decades"><img class="" src="img/f25-g18a.jpg" alt="A model with arms spread shows off a jacket covered in looped fabric strips in a rainbow of colours, worn with a black top and white pants patterned with patches of colourful fabric." width="880" height="1100" loading="lazy" decoding="async"></button>
+<div class="feature-text">
+<p class="credit">Group 18 · Fall 2025</p>
+<h3 id="fall-2025-group-18-t">Throwback to the Decades</h3>
+<p class="blurb">A runway look inspired by Freddie Mercury’s fearless 1980s stage style, turning discarded fabrics into bold texture, colour and movement.</p>
+<ul class="mats" aria-label="Materials"><li>Fabric offcuts</li><li>Satin</li><li>Thrifted jacket</li><li>Thrifted pants</li><li>Fabric glue</li><li>Staples</li></ul>
+<button class="more" type="button" data-open="fall-2025-group-18">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article><article class="feature flip reveal" id="spring-2025-group-8" aria-labelledby="spring-2025-group-8-t">
+<button class="feature-media" type="button" data-open="spring-2025-group-8" aria-label="Open From Tailored Elegance to Fast Fashion"><div class="ph " data-fam="mixed" role="img" aria-label="Photo coming soon"><span>Mixed materials</span><small>Runway photo coming soon</small></div></button>
+<div class="feature-text">
+<p class="credit">Group 8 · Spring 2025</p>
+<h3 id="spring-2025-group-8-t">From Tailored Elegance to Fast Fashion</h3>
+<p class="blurb">A period-style dress rebuilt from 1990s castoffs, tracing fashion’s shift from hand-tailored garments to mass-produced, disposable clothing.</p>
+<ul class="mats" aria-label="Materials"><li>Discarded vinyl records</li><li>90s band T-shirts</li><li>Old beads and bangles</li><li>Cassette tapes</li></ul>
+<button class="more" type="button" data-open="spring-2025-group-8">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article><article class="feature  reveal" id="fall-2023-honors-project" aria-labelledby="fall-2023-honors-project-t">
+<button class="feature-media" type="button" data-open="fall-2023-honors-project" aria-label="Open Games of Power"><div class="ph " data-fam="mixed" role="img" aria-label="Photo coming soon"><span>Mixed materials</span><small>Runway photo coming soon</small></div></button>
+<div class="feature-text">
+<p class="credit">Honors project · Fall 2023</p>
+<h3 id="fall-2023-honors-project-t">Games of Power</h3>
+<p class="blurb">A floor-length coat of stapled playing cards and bandanas, inspired by The Ballad of Songbirds and Snakes and its themes of tyranny and resistance.</p>
+<ul class="mats" aria-label="Materials"><li>Playing cards</li><li>Bandanas</li><li>Repurposed textiles</li><li>Top hat</li><li>Crocheted yarn</li><li>Tulle</li></ul>
+<button class="more" type="button" data-open="fall-2023-honors-project">Read the design concept <span aria-hidden="true">›</span></button>
+</div></article></div>
+</section>
+
+<section class="view" data-view="semesters" aria-labelledby="sem-h" hidden>
+  <div class="wrap sem-hero">
+    <p class="eyebrow">The archive</p>
+    <h1 id="sem-h" tabindex="-1">Every runway,<br>by semester.</h1>
+    <p class="lede">Choose a year, then a semester, to see every piece from that show.</p>
+  </div>
+  <div class="switch"><div class="wrap"><div class="seg" role="tablist" aria-label="Year"><button type="button" role="tab" data-year="2026" aria-selected="false">2026</button><button type="button" role="tab" data-year="2025" aria-selected="false">2025</button><button type="button" role="tab" data-year="2024" aria-selected="false">2024</button><button type="button" role="tab" data-year="2023" aria-selected="false">2023</button></div></div></div>
+  <div class="wrap"><div class="year" role="tabpanel" data-year="2026" aria-label="2026" hidden><div class="terms" role="group" aria-label="Semester"><button type="button" data-term="Spring" aria-pressed="false">Spring 2026</button></div><div class="term" data-term="Spring" hidden><p class="term-head"><strong>Spring 2026</strong> <span>5 pieces on the runway</span></p><ul class="tiles"><li class="tile reveal"><button type="button" data-open="spring-2026-group-1">
+<img class="" src="img/s26-g1.jpg" alt="A model walks the runway in a floor-length gown with tiered paper ruffles shading from white at the waist through green to tan and brown at the hem, with cut paper leaves layered over the shoulders and bodice." width="880" height="1100" loading="lazy" decoding="async"><span class="tile-cap"><span class="cat-tag" data-cat="upcycle">Upcycle</span>
+<strong>Four Seasons Leaf Gown</strong><span class="credit">Group 1</span></span></button></li><li class="tile reveal"><button type="button" data-open="spring-2026-group-5">
+<img class="" src="img/s26-g5.jpg" alt="A model stands on the runway in a fitted black jacket with light military-style trim and wide-leg patchwork trousers in grey, tan and cream fabric pieces." width="880" height="1100" loading="lazy" decoding="async"><span class="tile-cap"><span class="cat-tag" data-cat="repurpose">Repurpose</span>
+<strong>Peacock Revolution</strong><span class="credit">Group 5</span></span></button></li><li class="tile reveal"><button type="button" data-open="spring-2026-group-12">
+<img class="" src="img/s26-g12.jpg" alt="A smiling model poses with a hand on her hip in a dark, glossy plastic bodice with bottle-label straps and a full skirt of crumpled clear and silver plastic that glows orange and yellow near the waist." width="880" height="1100" loading="lazy" decoding="async"><span class="tile-cap"><span class="cat-tag" data-cat="recycle">Recycle</span>
+<strong>What the Ocean Keeps</strong><span class="credit">Group 12</span></span></button></li><li class="tile reveal"><button type="button" data-open="spring-2026-group-16">
+<img class="" src="img/s26-g16a.jpg" alt="A model walks under a clear umbrella covered with newspaper, wearing a newspaper gown whose bell-shaped skirt is studded with rolled paper rosettes in pink, teal, purple, yellow and grey." width="880" height="1100" loading="lazy" decoding="async"><span class="tile-cap"><span class="cat-tag" data-cat="upcycle">Upcycle</span>
+<strong>Newspaper Gala</strong><span class="credit">Group 16</span></span></button></li><li class="tile reveal"><button type="button" data-open="spring-2026-group-19">
+<img class="" src="img/s26-g19a.jpg" alt="A model in a strapless patchwork denim mini dress in several shades of blue, with white boots and a flower crown, swirls a long train of dark blue and white fabric behind her." width="880" height="1100" loading="lazy" decoding="async"><span class="tile-cap"><span class="cat-tag" data-cat="repurpose">Repurpose</span>
+<strong>Denim Tide</strong><span class="credit">Group 19</span></span></button></li></ul></div></div><div class="year" role="tabpanel" data-year="2025" aria-label="2025" hidden><div class="terms" role="group" aria-label="Semester"><button type="button" data-term="Fall" aria-pressed="false">Fall 2025</button><button type="button" data-term="Spring" aria-pressed="false">Spring 2025</button></div><div class="term" data-term="Fall" hidden><p class="term-head"><strong>Fall 2025</strong> <span>2 pieces on the runway</span></p><ul class="tiles"><li class="tile reveal"><button type="button" data-open="fall-2025-group-18">
+<img class="" src="img/f25-g18a.jpg" alt="A model with arms spread shows off a jacket covered in looped fabric strips in a rainbow of colours, worn with a black top and white pants patterned with patches of colourful fabric." width="880" height="1100" loading="lazy" decoding="async"><span class="tile-cap"><span class="cat-tag" data-cat="repurpose">Repurpose</span>
+<strong>Throwback to the Decades</strong><span class="credit">Group 18</span></span></button></li><li class="tile reveal"><button type="button" data-open="fall-2025-group-19">
+<img class="" src="img/f25-g19.jpg" alt="A model in a white dress of layered, fan-folded newspaper tiers raises a paper wand and holds a pleated paper fan, walking a runway between rows of seated audience." width="880" height="1100" loading="lazy" decoding="async"><span class="tile-cap"><span class="cat-tag" data-cat="upcycle">Upcycle</span>
+<strong>Second Life: Newspaper in Motion</strong><span class="credit">Group 19</span></span></button></li></ul></div><div class="term" data-term="Spring" hidden><p class="term-head"><strong>Spring 2025</strong> <span>3 pieces on the runway</span></p><ul class="tiles"><li class="tile reveal"><button type="button" data-open="spring-2025-group-8">
+<div class="ph " data-fam="mixed" role="img" aria-label="Photo coming soon"><span>Mixed materials</span><small>Runway photo coming soon</small></div><span class="tile-cap"><span class="cat-tag" data-cat="repurpose">Repurpose</span>
+<strong>From Tailored Elegance to Fast Fashion</strong><span class="credit">Group 8</span></span></button></li><li class="tile reveal"><button type="button" data-open="spring-2025-group-13">
+<div class="ph " data-fam="plastic" role="img" aria-label="Photo coming soon"><span>Plastic</span><small>Runway photo coming soon</small></div><span class="tile-cap"><span class="cat-tag" data-cat="recycle">Recycle</span>
+<strong>Tides of Plastic</strong><span class="credit">Group 13</span></span></button></li><li class="tile reveal"><button type="button" data-open="spring-2025-group-20">
+<img class="" src="img/s25-g20.jpg" alt="A model poses on stage in a teal satin wrap over a dress covered in clear, curling plastic ribbons and sparkling scales that catch the blue stage light." width="880" height="1100" loading="lazy" decoding="async"><span class="tile-cap"><span class="cat-tag" data-cat="upcycle">Upcycle</span>
+<strong>Drowned in Plastic</strong><span class="credit">Group 20</span></span></button></li></ul></div></div><div class="year" role="tabpanel" data-year="2024" aria-label="2024" hidden><div class="terms" role="group" aria-label="Semester"><button type="button" data-term="Spring" aria-pressed="false">Spring 2024</button></div><div class="term" data-term="Spring" hidden><p class="term-head"><strong>Spring 2024</strong> <span>1 piece on the runway</span></p><ul class="tiles"><li class="tile reveal"><button type="button" data-open="spring-2024-group-9">
+<img class="" src="img/s24-g9.jpg" alt="A model stands on a dark stage in a strapless gown with a full skirt of clear, shimmering plastic over ruffled red coral-like layers, lit in blue and pink." width="880" height="1100" loading="lazy" decoding="async"><span class="tile-cap"><span class="cat-tag" data-cat="upcycle">Upcycle</span>
+<strong>Coral Under Threat</strong><span class="credit">Group 9</span></span></button></li></ul></div></div><div class="year" role="tabpanel" data-year="2023" aria-label="2023" hidden><div class="terms" role="group" aria-label="Semester"><button type="button" data-term="Fall" aria-pressed="false">Fall 2023</button><button type="button" data-term="Spring" aria-pressed="false">Spring 2023</button></div><div class="term" data-term="Fall" hidden><p class="term-head"><strong>Fall 2023</strong> <span>1 piece on the runway</span></p><ul class="tiles"><li class="tile reveal"><button type="button" data-open="fall-2023-honors-project">
+<div class="ph " data-fam="mixed" role="img" aria-label="Photo coming soon"><span>Mixed materials</span><small>Runway photo coming soon</small></div><span class="tile-cap"><span class="cat-tag" data-cat="repurpose">Repurpose</span>
+<strong>Games of Power</strong><span class="credit">Honors project</span></span></button></li></ul></div><div class="term" data-term="Spring" hidden><p class="term-head"><strong>Spring 2023</strong> <span>2 pieces on the runway</span></p><ul class="tiles"><li class="tile reveal"><button type="button" data-open="spring-2023-group-21">
+<div class="ph " data-fam="plastic" role="img" aria-label="Photo coming soon"><span>Plastic</span><small>Runway photo coming soon</small></div><span class="tile-cap"><span class="cat-tag" data-cat="recycle">Recycle</span>
+<strong>Ocean in Distress</strong><span class="credit">Group 21</span></span></button></li><li class="tile reveal"><button type="button" data-open="spring-2023-group-22">
+<div class="ph " data-fam="mixed" role="img" aria-label="Photo coming soon"><span>Mixed materials</span><small>Runway photo coming soon</small></div><span class="tile-cap"><span class="cat-tag" data-cat="recycle">Recycle</span>
+<strong>Polluted Waters, Living Forms</strong><span class="credit">Group 22</span></span></button></li></ul></div></div></div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Pieces are credited by group and semester. Every garment was designed and built collaboratively by students in PERF 156 at Texas A&amp;M University.</p>
+    <p>Photos from the Waste Wearable Art runway shows. Pieces without a photo yet are shown with a placeholder.</p>
+    <nav aria-label="Footer"><a href="#overview">Overview</a><a href="#upcycle">Upcycle</a><a href="#recycle">Recycle</a><a href="#repurpose">Repurpose</a><a href="#semesters">Semesters</a></nav>
+  </div>
+</footer>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-t">
+  <button class="close" type="button" aria-label="Close" data-close>×</button>
+  <div class="sheet-in">
+    <div class="sheet-media" id="sheet-media" tabindex="0" aria-label="Photos"></div>
+    <div class="sheet-body">
+      <p class="credit" id="sheet-c"></p>
+      <h2 id="sheet-t"></h2>
+      <p class="blurb" id="sheet-b"></p>
+      <div class="dots" id="sheet-dots" aria-hidden="true"></div>
+      <h4>Design concept</h4>
+      <p class="concept" id="sheet-x"></p>
+      <h4 id="sheet-mh">Materials</h4>
+      <ul class="mats" id="sheet-m" aria-labelledby="sheet-mh"></ul>
+    </div>
+  </div>
+</dialog>
+
+<script>
+var PIECES={"spring-2026-group-1": {"t": "Four Seasons Leaf Gown", "c": "Group 1 · Spring 2026", "cat": "Upcycle", "k": "upcycle", "b": "An upcycled “leaf” gown that moves through the four seasons, showing materials cycling through birth, transformation and decay instead of being thrown away after one use.", "x": "A cardboard corset sits on a papier-mâché base, wrapped at the shoulders in hand-cut paper leaves. The gown is built on newspaper lined with tape for strength. Its gathered, sewn ruffles shift from white to bright green to brown, and the larger leaves carry the same colour change, tracing the life cycle of a tree and of life itself.", "m": ["Cardboard", "Newspaper", "Papier-mâché", "Paper leaves", "Tape"], "f": "Paper", "fam": "paper", "i": [{"s": "img/s26-g1.jpg", "a": "A model walks the runway in a floor-length gown with tiered paper ruffles shading from white at the waist through green to tan and brown at the hem, with cut paper leaves layered over the shoulders and bodice."}]}, "spring-2026-group-5": {"t": "Peacock Revolution", "c": "Group 5 · Spring 2026", "cat": "Repurpose", "k": "repurpose", "b": "A take on 1970s men’s fashion, the era called the “Peacock Revolution,” when menswear turned bold, playful and less strictly masculine.", "x": "The design draws on how 1970s counterculture and politics shaped what men wore. It also nods to the start of fast fashion in that decade, when military styles crossed into everyday clothing and synthetic fabrics became the norm.", "m": ["Upcycled garments", "Fabric scraps", "Synthetic fabrics"], "f": "Fabric and denim", "fam": "fabric", "i": [{"s": "img/s26-g5.jpg", "a": "A model stands on the runway in a fitted black jacket with light military-style trim and wide-leg patchwork trousers in grey, tan and cream fabric pieces."}]}, "spring-2026-group-12": {"t": "What the Ocean Keeps", "c": "Group 12 · Spring 2026", "cat": "Recycle", "k": "recycle", "b": "A garment that shows how everyday choices add up to plastic waste in our oceans, and how that trash keeps harming marine life long after it is thrown away.", "x": "The group turned discarded material into a single striking image, hoping viewers would stop and think about where their own waste ends up.", "m": ["Plastic bags", "Plastic bottles", "Duct tape", "Plastic film"], "f": "Plastic", "fam": "plastic", "i": [{"s": "img/s26-g12.jpg", "a": "A smiling model poses with a hand on her hip in a dark, glossy plastic bodice with bottle-label straps and a full skirt of crumpled clear and silver plastic that glows orange and yellow near the waist."}]}, "spring-2026-group-16": {"t": "Newspaper Gala", "c": "Group 16 · Spring 2026", "cat": "Upcycle", "k": "upcycle", "b": "A formal gala gown made of newspaper that takes on deforestation and landfill overflow by giving paper one more life before it is gone.", "x": "Ruffles and a strong structure bring out the texture of paper, which feels and moves differently from traditional fabric. The look is a newspaper take on formal gala wear.", "m": ["Newspaper", "Paper", "Paper rosettes", "Reused umbrella"], "f": "Paper", "fam": "paper", "i": [{"s": "img/s26-g16a.jpg", "a": "A model walks under a clear umbrella covered with newspaper, wearing a newspaper gown whose bell-shaped skirt is studded with rolled paper rosettes in pink, teal, purple, yellow and grey."}, {"s": "img/s26-g16b.jpg", "a": "A closer view of the same newspaper gown from the front, showing the fitted newspaper bodice and the rosettes clustered over the full skirt."}]}, "spring-2026-group-19": {"t": "Denim Tide", "c": "Group 19 · Spring 2026", "cat": "Repurpose", "k": "repurpose", "b": "A two-part denim gown made entirely from repurposed denim from students’ own closets and community donations, created by first-time makers.", "x": "The upper half refers to cotton farming and how much water it uses. The flowing train suggests ocean pollution through its wave-like movement. Together the two parts push back on fast fashion and show what careful, sustainable design can do.", "m": ["Repurposed denim", "Donated jeans", "Sheer fabric"], "f": "Fabric and denim", "fam": "fabric", "i": [{"s": "img/s26-g19a.jpg", "a": "A model in a strapless patchwork denim mini dress in several shades of blue, with white boots and a flower crown, swirls a long train of dark blue and white fabric behind her."}, {"s": "img/s26-g19b.jpg", "a": "The same denim dress seen at full length as the model walks the runway, the blue and white train trailing on the floor."}]}, "fall-2025-group-18": {"t": "Throwback to the Decades", "c": "Group 18 · Fall 2025", "cat": "Repurpose", "k": "repurpose", "b": "A runway look inspired by Freddie Mercury’s fearless 1980s stage style, turning discarded fabrics into bold texture, colour and movement.", "x": "The group layered hundreds of 3-inch fabric strips onto a thrifted black jacket as “feathers,” starting with warm colours at the hem and moving to cool colours at the shoulders. Thrifted white pants were covered front and back with squares of recycled fabric, and a belt was made from reused ribbon. The jacket was designed to be pulled off for a dramatic moment on the runway.", "m": ["Fabric offcuts", "Satin", "Thrifted jacket", "Thrifted pants", "Fabric glue", "Staples"], "f": "Fabric and denim", "fam": "fabric", "i": [{"s": "img/f25-g18a.jpg", "a": "A model with arms spread shows off a jacket covered in looped fabric strips in a rainbow of colours, worn with a black top and white pants patterned with patches of colourful fabric."}, {"s": "img/f25-g18b.jpg", "a": "The same model mid-turn on the runway, the rainbow fabric-strip jacket flaring at the sleeves."}]}, "fall-2025-group-19": {"t": "Second Life: Newspaper in Motion", "c": "Group 19 · Fall 2025", "cat": "Upcycle", "k": "upcycle", "b": "An upcycled newspaper dress with a sculptural fan, combining garment construction with experimental materials for a structured, theatrical silhouette.", "x": "Folding, layering and upcycled construction give discarded newspaper a second life. The piece blends fashion, storytelling and sustainability, turning waste into a bold statement of creativity and environmental awareness.", "m": ["Recycled newspaper", "Paper bags", "Wire", "Felt", "Upcycled corset"], "f": "Paper", "fam": "paper", "i": [{"s": "img/f25-g19.jpg", "a": "A model in a white dress of layered, fan-folded newspaper tiers raises a paper wand and holds a pleated paper fan, walking a runway between rows of seated audience."}]}, "spring-2025-group-8": {"t": "From Tailored Elegance to Fast Fashion", "c": "Group 8 · Spring 2025", "cat": "Repurpose", "k": "repurpose", "b": "A period-style dress rebuilt from 1990s castoffs, tracing fashion’s shift from hand-tailored garments to mass-produced, disposable clothing.", "x": "A corset-like bodice is made from discarded records, and a full skirt from repurposed 90s band T-shirts. Jewelry from old beads and bangles adds to the retro look. By mixing 1800s silhouettes with 1990s pop culture, the piece asks viewers to think about labour, waste and the environmental cost of fast fashion.", "m": ["Discarded vinyl records", "90s band T-shirts", "Old beads and bangles", "Cassette tapes"], "f": "Mixed materials", "fam": "mixed", "i": []}, "spring-2025-group-13": {"t": "Tides of Plastic", "c": "Group 13 · Spring 2025", "cat": "Recycle", "k": "recycle", "b": "Inspired by the Great Pacific Garbage Patch, a crocheted mesh dress made from plastic bag yarn that looks like the fishing nets polluting the ocean.", "x": "The group hand-spun shopping bags into yarn and crocheted it into a net-like mesh. Crumpled bags at the hem suggest sea foam and waves, and cut, coloured water bottle pieces stand in for floating debris. The piece asks viewers to face the scale of marine pollution and imagine new ways to reuse and act.", "m": ["Plastic shopping bags", "Plastic bag yarn", "Water bottles"], "f": "Plastic", "fam": "plastic", "i": []}, "spring-2025-group-20": {"t": "Drowned in Plastic", "c": "Group 20 · Spring 2025", "cat": "Upcycle", "k": "upcycle", "b": "A marine-inspired garment that looks beautiful from a distance and troubling up close, revealing sea life overwhelmed by human waste.", "x": "Scales and surface textures made from discarded plastic show pollution built into the body of ocean life. The contrast between beauty and danger is the point: the work uses upcycling as both a creative method and a critique of overconsumption and careless disposal.", "m": ["Plastic bags", "Plastic bottles", "Discarded plastics"], "f": "Plastic", "fam": "plastic", "i": [{"s": "img/s25-g20.jpg", "a": "A model poses on stage in a teal satin wrap over a dress covered in clear, curling plastic ribbons and sparkling scales that catch the blue stage light."}]}, "spring-2024-group-9": {"t": "Coral Under Threat", "c": "Group 9 · Spring 2024", "cat": "Upcycle", "k": "upcycle", "b": "A coral-reef gown with a structured hoop skirt, corset top and coral crown, made from household plastics to show how fragile marine life is.", "x": "Ruffled plastic tablecloths form the underdress, and a wire hoop holds up a full outer skirt of shower curtains. The corset top, cut from leftover shower curtain, carries handmade coral shapes of hot glue painted red. Matching coral on the shoes and a crown-like headpiece turn the model into a living coral form.", "m": ["Plastic tablecloths", "Shower curtains", "Wire", "Wax paper", "Cardboard", "Ribbon", "Hot glue"], "f": "Plastic", "fam": "plastic", "i": [{"s": "img/s24-g9.jpg", "a": "A model stands on a dark stage in a strapless gown with a full skirt of clear, shimmering plastic over ruffled red coral-like layers, lit in blue and pink."}]}, "fall-2023-honors-project": {"t": "Games of Power", "c": "Honors project · Fall 2023", "cat": "Repurpose", "k": "repurpose", "b": "A floor-length coat of stapled playing cards and bandanas, inspired by The Ballad of Songbirds and Snakes and its themes of tyranny and resistance.", "x": "Playing cards stand for strategy, control, risk and manipulation. A coat was chosen over a dress to project authority and drama. Black, white, red and grey bandanas sharpen the contrast, and a black top hat with a crocheted red cover and red tulle completes the look.", "m": ["Playing cards", "Bandanas", "Repurposed textiles", "Top hat", "Crocheted yarn", "Tulle"], "f": "Mixed materials", "fam": "mixed", "i": []}, "spring-2023-group-21": {"t": "Ocean in Distress", "c": "Group 21 · Spring 2023", "cat": "Recycle", "k": "recycle", "b": "A layered, ruffled trash-bag dress in ocean blues and whites that evokes moving water while drawing attention to plastic pollution.", "x": "Trash bags were layered, scrunched, knotted and ruffled to imitate the movement and texture of waves and sea foam. The blue and white palette stands for water while reminding viewers of the artificial materials that now fill marine environments.", "m": ["Blue and white trash bags", "Duct tape", "Drawstrings", "Fairy lights"], "f": "Plastic", "fam": "plastic", "i": []}, "spring-2023-group-22": {"t": "Polluted Waters, Living Forms", "c": "Group 22 · Spring 2023", "cat": "Recycle", "k": "recycle", "b": "A fish-inspired dress built on a thrifted gown, with bottle caps as scales and plastic straws forming a sculptural shell and tail.", "x": "The thrifted base dress was altered to fit the model. Bottle caps were attached as fish scales, and layered straws over plastic wrap and fabric supports form the shell and tail, adding depth, movement and colour. The piece holds the beauty of sea creatures against the plastics that threaten them.", "m": ["Plastic bottle caps", "Plastic straws", "Plastic wrap", "Thrifted dress"], "f": "Mixed materials", "fam": "mixed", "i": []}};
+(function(){
+  document.body.classList.remove('no-js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var views=[].slice.call(document.querySelectorAll('.view'));
+  var tabs=[].slice.call(document.querySelectorAll('.tabs a'));
+  var NAMES={overview:'Waste Wearable Art',upcycle:'Upcycle',recycle:'Recycle',repurpose:'Repurpose',semesters:'Semesters'};
+
+  /* Reveal on scroll */
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.12}):null;
+  function observe(root){[].slice.call(root.querySelectorAll('.reveal:not(.in)')).forEach(function(el){io?io.observe(el):el.classList.add('in')})}
+
+  /* Semester switcher */
+  var yearBtns=[].slice.call(document.querySelectorAll('.seg button'));
+  var years=[].slice.call(document.querySelectorAll('.year'));
+  function showSem(y,t,push){
+    if(!y)y=yearBtns[0].dataset.year;
+    yearBtns.forEach(function(b){var on=b.dataset.year===y;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1});
+    var panel=null;years.forEach(function(p){var on=p.dataset.year===y;p.hidden=!on;if(on)panel=p});
+    if(!panel)return showSem(null,null,push);
+    var tbs=[].slice.call(panel.querySelectorAll('.terms button'));
+    if(!t||!tbs.some(function(b){return b.dataset.term===t}))t=tbs[0].dataset.term;
+    tbs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.term===t)});
+    [].slice.call(panel.querySelectorAll('.term')).forEach(function(g){g.hidden=g.dataset.term!==t});
+    observe(panel);
+    var h='#semesters/'+t.toLowerCase()+'-'+y;
+    if(push&&location.hash!==h)history.replaceState(null,'',h);
+  }
+  yearBtns.forEach(function(b,i){
+    b.addEventListener('click',function(){showSem(b.dataset.year,null,true)});
+    b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();var n=yearBtns[(i+d+yearBtns.length)%yearBtns.length];n.focus();n.click()});
+  });
+  years.forEach(function(p){[].slice.call(p.querySelectorAll('.terms button')).forEach(function(b){b.addEventListener('click',function(){showSem(p.dataset.year,b.dataset.term,true)})})});
+
+  /* Router */
+  function route(){
+    var h=(location.hash||'#overview').slice(1).split('/');
+    var v=NAMES[h[0]]?h[0]:'overview';
+    var prev=document.querySelector('.view:not([hidden])');
+    views.forEach(function(s){s.hidden=s.dataset.view!==v});
+    tabs.forEach(function(a){a.dataset.tab===v?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
+    document.title=v==='overview'?'Waste Wearable Art':NAMES[v]+' · Waste Wearable Art';
+    if(v==='semesters'){var m=(h[1]||'').match(/^(spring|fall)-(\d{4})$/);showSem(m?m[2]:null,m?m[1].charAt(0).toUpperCase()+m[1].slice(1):null,false)}
+    var cur=document.querySelector('.view:not([hidden])');
+    observe(cur);
+    if(prev&&prev!==cur){window.scrollTo(0,0);var hd=cur.querySelector('h1');if(hd)hd.focus({preventScroll:true})}
+    onScroll();
+  }
+  window.addEventListener('hashchange',route);
+
+  /* Hero zoom and word-by-word statement */
+  var hero=document.getElementById('hero'),st=document.getElementById('statement'),wordsEl=document.getElementById('words');
+  var words=[];
+  wordsEl.innerHTML=wordsEl.textContent.split(/\s+/).map(function(w){var hl=w.charAt(0)==='*';return '<span class="w'+(hl?' hl':'')+'">'+(hl?w.slice(1):w)+'</span>'}).join(' ');
+  words=[].slice.call(wordsEl.querySelectorAll('.w'));
+  var ticking=false;
+  function onScroll(){
+    if(ticking||reduce)return;ticking=true;
+    requestAnimationFrame(function(){
+      ticking=false;
+      if(hero.offsetParent===null)return;
+      var vh=window.innerHeight,y=window.scrollY;
+      hero.style.setProperty('--p',Math.min(1,Math.max(0,y/vh)).toFixed(3));
+      var r=st.getBoundingClientRect(),span=st.offsetHeight-vh;
+      var prog=Math.min(1,Math.max(0,(-r.top+vh*.25)/(span*.85)));
+      var n=Math.round(prog*words.length);
+      words.forEach(function(w,i){w.classList.toggle('on',i<n)});
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  if(reduce)words.forEach(function(w){w.classList.add('on')});
+
+  /* Gallery arrows */
+  var gal=document.getElementById('gallery');
+  [].slice.call(document.querySelectorAll('.gal-ctrl button')).forEach(function(b){b.addEventListener('click',function(){var li=gal.querySelector('li');gal.scrollBy({left:(li.offsetWidth+20)*+b.dataset.g,behavior:reduce?'auto':'smooth'})})});
+
+  /* Detail sheet */
+  var sheet=document.getElementById('sheet'),media=document.getElementById('sheet-media'),dots=document.getElementById('sheet-dots'),opener=null;
+  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+  function open(id){
+    var p=PIECES[id];if(!p)return;
+    document.getElementById('sheet-c').innerHTML='<span class="cat-tag" data-cat="'+p.k+'">'+p.cat+'</span> · '+esc(p.c);
+    document.getElementById('sheet-t').textContent=p.t;
+    document.getElementById('sheet-b').textContent=p.b;
+    document.getElementById('sheet-x').textContent=p.x;
+    document.getElementById('sheet-m').innerHTML=p.m.map(function(m){return '<li>'+esc(m)+'</li>'}).join('');
+    media.innerHTML=p.i.length?p.i.map(function(im){return '<img src="'+im.s+'" alt="'+esc(im.a)+'" width="880" height="1100">'}).join(''):'<div class="ph" data-fam="'+p.fam+'" role="img" aria-label="Photo coming soon"><span>'+esc(p.f)+'</span><small>Runway photo coming soon</small></div>';
+    media.scrollLeft=0;
+    dots.innerHTML=p.i.length>1?p.i.map(function(_,i){return '<span'+(i?'':' class="on"')+'></span>'}).join('')+'':'';
+    dots.hidden=p.i.length<2;
+    media.setAttribute('aria-label',p.i.length>1?p.i.length+' photos, scroll sideways for more':'Photo');
+    if(typeof sheet.showModal==='function')sheet.showModal();else sheet.setAttribute('open','');
+    sheet.querySelector('.sheet-body').scrollTop=0;
+  }
+  media.addEventListener('scroll',function(){var i=Math.round(media.scrollLeft/media.clientWidth);[].slice.call(dots.children).forEach(function(d,k){d.classList.toggle('on',k===i)})},{passive:true});
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-open]');if(b){opener=b;open(b.dataset.open)}});
+  sheet.addEventListener('click',function(e){if(e.target===sheet||e.target.closest('[data-close]'))sheet.close()});
+  sheet.addEventListener('close',function(){if(opener)opener.focus()});
+
+  route();
+})();
+</script>
+</body>
+</html>

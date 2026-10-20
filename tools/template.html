@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Waste Wearable Art</title>
+<meta name="description" content="Student wearable art made from waste: upcycled, recycled and repurposed garments from PERF 156, Dress in World Cultures, Texas A&amp;M University, Spring 2023 to Spring 2026.">
+<meta property="og:title" content="Waste Wearable Art">
+<meta property="og:description" content="Trash bags, newspaper, bottle caps and old denim, rebuilt into runway fashion by students.">
+<meta property="og:image" content="img/hero.jpg">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Cpath d='M9 22c0-6 3-11 7-13 4 2 7 7 7 13' fill='none' stroke='%2330d158' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap">
+<style>
+:root{
+  --bg:#ffffff; --bg-alt:#f5f5f7; --ink:#1d1d1f; --muted:#6e6e73; --line:#d2d2d7; --card:#ffffff;
+  --nav:rgba(251,251,253,.8); --nav-ink:#1d1d1f;
+  --link:#0066cc;
+  --up:#1a7f45; --up2:#34c759; --re:#0071e3; --re2:#5ac8fa; --rp:#c2410c; --rp2:#ff9f0a;
+  --plastic:#0071e3; --paper:#9a6b2f; --fabric:#b4235a; --mixed:#5b6b1f;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.25,.1,.25,1);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#000000; --bg-alt:#101012; --ink:#f5f5f7; --muted:#a1a1a6; --line:#2c2c2e; --card:#1c1c1e;
+  --nav:rgba(22,22,23,.8); --nav-ink:#f5f5f7; --link:#2997ff;
+  --up:#30d158; --re:#2997ff; --rp:#ff9f0a;
+  --plastic:#64b5ff; --paper:#e0b072; --fabric:#ff6fa3; --mixed:#b8cc6a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#000000; --bg-alt:#101012; --ink:#f5f5f7; --muted:#a1a1a6; --line:#2c2c2e; --card:#1c1c1e;
+  --nav:rgba(22,22,23,.8); --nav-ink:#f5f5f7; --link:#2997ff;
+  --up:#30d158; --re:#2997ff; --rp:#ff9f0a;
+  --plastic:#64b5ff; --paper:#e0b072; --fabric:#ff6fa3; --mixed:#b8cc6a; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.47;letter-spacing:-.022em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--link)}
+button{font:inherit;color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(22px,env(safe-area-inset-left));padding-right:max(22px,env(safe-area-inset-right))}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--bg);color:var(--ink);padding:8px 14px;border-radius:8px}
+.skip:focus{left:12px}
+:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:4px}
+[hidden]{display:none!important}
+
+/* Global nav */
+.gnav{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent);padding-top:env(safe-area-inset-top)}
+.gnav .wrap{display:flex;align-items:center;gap:8px;height:52px;max-width:1080px}
+.brand{font-weight:600;font-size:15px;color:var(--nav-ink);text-decoration:none;white-space:nowrap;margin-right:auto;display:flex;align-items:center;gap:8px}
+.brand svg{width:20px;height:20px;flex:none}
+.gnav nav{min-width:0}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin:0;padding:0;list-style:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{display:block;padding:7px 12px;border-radius:980px;font-size:13.5px;color:var(--nav-ink);opacity:.8;text-decoration:none;white-space:nowrap;transition:background .2s var(--ease),opacity .2s}
+.tabs a:hover{opacity:1}
+.tabs a[aria-current="page"]{opacity:1;background:color-mix(in srgb,var(--ink) 9%,transparent);font-weight:600}
+@media (max-width:640px){
+  .gnav .wrap{flex-wrap:wrap;height:auto;padding-top:8px;gap:0}
+  .brand{width:100%;justify-content:center;padding-bottom:4px}
+  .gnav nav{width:100%}
+  .tabs{width:100%;justify-content:space-between}
+  .tabs a{padding:8px 7px;font-size:12.5px}
+}
+
+/* Shared type */
+.eyebrow{font-size:17px;font-weight:600;color:var(--muted);margin:0 0 10px;letter-spacing:-.01em}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.03em;text-wrap:balance}
+h1:focus{outline:none}
+.lede{font-size:clamp(19px,2.2vw,24px);line-height:1.35;color:var(--muted);font-weight:500;max-width:34em;margin:18px 0 0;letter-spacing:-.02em}
+.grad{background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-cat="upcycle"]{--c1:var(--up);--c2:var(--up2)}
+[data-cat="recycle"]{--c1:var(--re);--c2:var(--re2)}
+[data-cat="repurpose"]{--c1:var(--rp);--c2:var(--rp2)}
+
+/* Reveal on scroll */
+.reveal{opacity:.25;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+
+/* Hero */
+.hero{position:relative;height:100svh;min-height:560px;background:#000;color:#f5f5f7;overflow:hidden;display:flex;align-items:flex-end}
+.hero-img{position:absolute;inset:0;transform:scale(calc(1.12 - var(--p,0) * .12));transform-origin:50% 40%;will-change:transform}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,.45) 50%,rgba(0,0,0,.94) 100%)}
+.hero-text{position:relative;z-index:1;padding-bottom:max(64px,9vh);width:100%;opacity:calc(1 - var(--p,0) * 1.6);transform:translateY(calc(var(--p,0) * -60px))}
+.hero .eyebrow{color:#d2d2d7}
+.hero h1{font-size:clamp(56px,11vw,128px);line-height:.95;letter-spacing:-.045em}
+.hero p.sub{font-size:clamp(20px,2.4vw,28px);line-height:1.25;font-weight:500;max-width:22em;margin:18px 0 26px;color:#e8e8ed;letter-spacing:-.02em}
+.cta{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border-radius:980px;background:#0071e3;color:#fff;text-decoration:none;font-size:17px;font-weight:500}
+.btn:hover{background:#0077ed}
+.tlink{color:#2997ff;text-decoration:none;font-size:19px}
+.tlink:hover{text-decoration:underline}
+.scroll-cue{position:absolute;z-index:1;left:50%;bottom:18px;transform:translateX(-50%);width:22px;height:34px;border:2px solid rgba(255,255,255,.5);border-radius:12px;opacity:calc(1 - var(--p,0) * 4)}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:6px;width:4px;height:7px;margin-left:-2px;border-radius:2px;background:#fff;animation:cue 1.8s infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+
+/* Word-by-word statement */
+.statement{background:#000;color:#f5f5f7;height:240vh;position:relative}
+.statement .sticky{position:sticky;top:0;height:100svh;display:flex;align-items:center}
+.statement p{font-size:clamp(30px,5.2vw,64px);line-height:1.12;font-weight:700;letter-spacing:-.035em;margin:0;max-width:16em}
+.statement .w{color:#3a3a3c;transition:color .35s var(--ease)}
+.statement .w.on{color:#f5f5f7}
+.statement .w.hl.on{background:linear-gradient(90deg,#30d158,#5ac8fa,#ff9f0a);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Sections */
+.section{padding:clamp(80px,12vw,150px) 0}
+.section.alt{background:var(--bg-alt)}
+.section-head{text-align:center;margin-bottom:clamp(40px,6vw,70px)}
+.section-head h2{font-size:clamp(40px,6.4vw,80px);line-height:1.02}
+.section-head .lede{margin-left:auto;margin-right:auto}
+
+/* Pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1240px;margin:0 auto;padding:0 max(22px,env(safe-area-inset-left))}
+.pillar{position:relative;display:block;border-radius:28px;overflow:hidden;aspect-ratio:3/4.4;background:#000;color:#fff;text-decoration:none;isolation:isolate}
+.pillar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);z-index:-1}
+.pillar:hover img{transform:scale(1.05)}
+.pillar::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.35) 60%,rgba(0,0,0,.88) 100%);z-index:-1}
+.pillar-text{position:absolute;inset:0;padding:30px 28px;display:flex;flex-direction:column;justify-content:flex-end}
+.pillar-name{font-size:clamp(32px,3.6vw,44px);font-weight:700;letter-spacing:-.035em;line-height:1}
+.pillar-line{font-size:19px;font-weight:500;margin-top:8px;color:#e8e8ed}
+.pillar-link{margin-top:20px;font-size:17px;font-weight:500;display:inline-flex;align-items:center;gap:6px;align-self:flex-start;padding:10px 18px;border-radius:980px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.pillar:nth-child(2){transition-delay:.1s}.pillar:nth-child(3){transition-delay:.2s}
+@media (max-width:820px){.pillars{grid-template-columns:1fr;max-width:520px}.pillar{aspect-ratio:4/4.6}}
+
+/* Numbers */
+.numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.numbers div{padding:8px}
+.numbers strong{display:block;font-size:clamp(56px,8vw,96px);font-weight:700;letter-spacing:-.05em;line-height:1}
+.numbers span{display:block;margin-top:8px;color:var(--muted);font-size:19px;font-weight:500}
+@media (max-width:560px){.numbers{grid-template-columns:1fr;gap:36px}}
+
+/* Gallery */
+.gallery{list-style:none;margin:0;padding:0 max(22px,calc((100vw - 1040px)/2));display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-padding:0 max(22px,calc((100vw - 1040px)/2))}
+.gallery::-webkit-scrollbar{display:none}
+.gallery li{flex:0 0 min(82vw,720px);scroll-snap-align:start}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;background:#111}
+.gallery figcaption{margin-top:14px;color:var(--muted);font-size:17px;max-width:36em}
+.gallery figcaption strong{color:var(--ink);font-weight:600}
+.gal-ctrl{display:flex;justify-content:flex-end;gap:12px;margin-top:22px}
+.gal-ctrl button{width:44px;height:44px;border-radius:50%;border:0;background:color-mix(in srgb,var(--ink) 10%,transparent);cursor:pointer;font-size:22px;line-height:1;display:grid;place-items:center}
+.gal-ctrl button:hover{background:color-mix(in srgb,var(--ink) 16%,transparent)}
+
+/* About */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px)}
+.about h2{font-size:clamp(32px,4vw,48px);line-height:1.08;margin-bottom:16px}
+.about p{color:var(--muted);font-size:19px;margin:0 0 14px}
+.about p strong{color:var(--ink);font-weight:600}
+.pills{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:20px 0 0}
+.pills li{padding:6px 14px;border-radius:980px;background:var(--card);border:1px solid var(--line);font-size:15px}
+@media (max-width:760px){.about{grid-template-columns:1fr}}
+
+/* Category views */
+.cat-hero{padding:clamp(56px,8vw,110px) 0 clamp(60px,8vw,110px);background:radial-gradient(90% 120% at 85% 20%,color-mix(in srgb,var(--c2) 26%,transparent) 0%,transparent 60%),radial-gradient(70% 90% at 0% 100%,color-mix(in srgb,var(--c1) 18%,transparent) 0%,transparent 60%)}
+.view[data-view="upcycle"],.view[data-view="recycle"],.view[data-view="repurpose"]{background:linear-gradient(180deg,transparent 0,color-mix(in srgb,var(--vc) 7%,var(--bg)) 40%,var(--bg) 100%)}
+.view[data-view="upcycle"]{--vc:var(--up)}.view[data-view="recycle"]{--vc:var(--re)}.view[data-view="repurpose"]{--vc:var(--rp)}
+.feature h3{background:linear-gradient(90deg,var(--ink),color-mix(in srgb,var(--vc) 70%,var(--ink)));-webkit-background-clip:text;background-clip:text;color:transparent}
+.mats li{background:color-mix(in srgb,var(--vc,var(--re)) 12%,var(--bg-alt))}
+.sem-hero h1{background:linear-gradient(90deg,#30d158,#2997ff 50%,#ff9f0a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tile .cat-tag{display:inline-block;align-self:flex-start;padding:2px 10px;border-radius:980px;background:color-mix(in srgb,var(--c1) 14%,transparent)}
+.cat-hero-in{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.cat-hero h1{font-size:clamp(48px,8.4vw,104px);line-height:.98;letter-spacing:-.045em;max-width:11em}
+.cat-hero .eyebrow{color:var(--c1)}
+.cat-hero-img{border-radius:32px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -20px color-mix(in srgb,var(--c1) 45%,transparent);animation:float-in 1.4s var(--ease) both}
+.cat-hero-img img{width:100%;height:100%;object-fit:cover}
+@keyframes float-in{from{opacity:0;transform:translateY(50px) scale(.96)}to{opacity:1;transform:none}}
+.cat-hero h1,.cat-hero .lede,.cat-hero .eyebrow{animation:float-in 1s var(--ease) both}
+.cat-hero .lede{animation-delay:.15s}
+@media (max-width:760px){.cat-hero-in{grid-template-columns:1fr}.cat-hero-img{max-width:300px;order:-1}}
+.features{display:flex;flex-direction:column;gap:clamp(72px,10vw,130px);padding-bottom:clamp(80px,10vw,140px)}
+.feature{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.feature.flip .feature-media{order:2}
+.feature-media{padding:0;border:0;background:none;cursor:zoom-in;border-radius:28px;overflow:hidden;display:block;aspect-ratio:4/5;width:100%}
+.feature-media img,.feature-media .ph{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.feature-media:hover img{transform:scale(1.04)}
+.credit{margin:0;color:var(--muted);font-size:15px;font-weight:600;letter-spacing:-.01em}
+.feature h3{font-size:clamp(34px,4.4vw,56px);line-height:1.04;margin:10px 0 16px;letter-spacing:-.04em}
+.blurb{font-size:clamp(19px,1.8vw,21px);line-height:1.4;margin:0 0 22px;color:var(--ink);opacity:.86}
+.mats{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 24px;padding:0}
+.mats li{padding:6px 14px;border-radius:980px;background:var(--bg-alt);font-size:14px;font-weight:500;color:var(--ink)}
+.more{border:0;background:none;padding:6px 0;color:var(--link);font-size:19px;cursor:pointer}
+.more:hover{text-decoration:underline}
+@media (max-width:760px){.feature{grid-template-columns:1fr}.feature.flip .feature-media{order:0}}
+
+/* Placeholder for pieces without photos */
+.ph{display:flex;flex-direction:column;justify-content:flex-end;padding:28px;text-align:left;color:#fff;
+  background:radial-gradient(120% 80% at 20% 10%,color-mix(in srgb,var(--fc) 70%,#fff) 0%,var(--fc) 45%,color-mix(in srgb,var(--fc) 40%,#000) 100%)}
+.ph span{font-size:clamp(30px,4vw,48px);font-weight:700;letter-spacing:-.04em;line-height:1}
+.ph small{font-size:14px;opacity:.85;margin-top:8px;font-weight:500}
+.ph[data-fam="plastic"]{--fc:#0a5bb8}.ph[data-fam="paper"]{--fc:#8a5a22}.ph[data-fam="fabric"]{--fc:#a0204f}.ph[data-fam="mixed"]{--fc:#4d5c18}
+
+/* Semesters view */
+.sem-hero{padding:clamp(70px,10vw,120px) 0 30px;text-align:center}
+.sem-hero h1{font-size:clamp(48px,8vw,96px);line-height:1;letter-spacing:-.045em}
+.sem-hero .lede{margin-left:auto;margin-right:auto}
+.switch{position:sticky;top:calc(53px + env(safe-area-inset-top));z-index:10;padding:14px 0;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+@media (max-width:640px){.switch{top:calc(70px + env(safe-area-inset-top))}}
+.seg{display:flex;width:max-content;max-width:100%;margin:0 auto;padding:4px;border-radius:980px;background:color-mix(in srgb,var(--ink) 8%,transparent);overflow-x:auto;scrollbar-width:none}
+.seg button{border:0;background:none;padding:10px 22px;border-radius:980px;font-size:17px;font-weight:600;cursor:pointer;color:var(--muted);min-height:44px;transition:background .25s var(--ease),color .25s}
+.seg button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.terms{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:28px 0 8px}
+.terms button{border:1px solid var(--line);background:none;border-radius:980px;padding:8px 20px;min-height:44px;font-size:16px;font-weight:500;cursor:pointer;color:var(--ink)}
+.terms button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.term-head{text-align:center;color:var(--muted);margin:24px 0 32px;font-size:17px}
+.term-head strong{display:block;color:var(--ink);font-size:clamp(32px,4.4vw,48px);letter-spacing:-.04em;margin-bottom:4px}
+.tiles{list-style:none;margin:0;padding:0 0 clamp(80px,10vw,130px);display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:22px}
+.tile button{display:flex;flex-direction:column;justify-content:flex-start;width:100%;padding:0;border:0;background:var(--card);border-radius:24px;overflow:hidden;text-align:left;cursor:pointer;box-shadow:0 4px 24px rgba(0,0,0,.06);transition:transform .5s var(--ease),box-shadow .5s var(--ease);height:100%}
+.tile button:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 18px 40px rgba(0,0,0,.14)}
+.tile img,.tile .ph{width:100%;aspect-ratio:4/5;object-fit:cover}
+.tile-cap{display:flex;flex-direction:column;gap:4px;padding:18px 20px 22px}
+.tile-cap strong{font-size:21px;letter-spacing:-.03em;line-height:1.2}
+.cat-tag{font-size:13px;font-weight:600;color:var(--c1)}
+.year .tile:nth-child(2){transition-delay:.08s}.year .tile:nth-child(3){transition-delay:.16s}.year .tile:nth-child(4){transition-delay:.24s}.year .tile:nth-child(5){transition-delay:.32s}
+
+/* Detail sheet */
+dialog.sheet{border:0;padding:0;margin:auto;width:min(1000px,calc(100vw - 32px));max-height:calc(100svh - 48px);border-radius:28px;background:var(--card);color:var(--ink);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog.sheet::backdrop{background:rgba(0,0,0,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+dialog.sheet[open]{animation:pop .45s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}
+.sheet-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);max-height:calc(100svh - 48px)}
+.sheet-media{background:#000;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;position:relative}
+.sheet-media::-webkit-scrollbar{display:none}
+.sheet-media img,.sheet-media .ph{flex:0 0 100%;width:100%;height:100%;max-height:calc(100svh - 48px);object-fit:cover;scroll-snap-align:start;aspect-ratio:4/5}
+.sheet-body{padding:44px 40px 40px;overflow-y:auto}
+.sheet-body h2{font-size:clamp(30px,3.4vw,40px);line-height:1.06;margin:8px 0 14px;letter-spacing:-.04em}
+.sheet-body h4{margin:26px 0 8px;font-size:15px;color:var(--muted);font-weight:600}
+.sheet-body p{margin:0}
+.sheet-body .concept{font-size:17px;color:var(--ink);opacity:.86}
+.close{position:absolute;top:14px;right:14px;z-index:2;width:36px;height:36px;border-radius:50%;border:0;background:color-mix(in srgb,var(--ink) 12%,var(--card));cursor:pointer;font-size:20px;line-height:1;display:grid;place-items:center}
+.dots{display:flex;gap:6px;margin-top:10px}
+.dots span{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.dots span.on{background:var(--ink)}
+@media (max-width:760px){
+  dialog.sheet{width:100vw;max-width:100vw;max-height:94svh;margin:auto 0 0;border-radius:24px 24px 0 0}
+  .sheet-in{grid-template-columns:1fr;overflow-y:auto;max-height:94svh}
+  .sheet-media img,.sheet-media .ph{max-height:62svh}
+  .sheet-body{overflow:visible;padding:28px 22px calc(32px + env(safe-area-inset-bottom))}
+}
+
+/* Footer */
+footer{background:var(--bg-alt);color:var(--muted);font-size:13px;padding:28px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+footer p{margin:0 0 8px;max-width:70em}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:12px}
+footer nav a{color:var(--ink);text-decoration:none}
+footer nav a:hover{text-decoration:underline}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .hero-img,.hero-text{transform:none!important;opacity:1!important}
+  .statement{height:auto}.statement .sticky{position:static;height:auto;padding:110px 0}.statement .w{color:#f5f5f7}
+}
+</style>
+</head>
+<body class="no-js">
+<a class="skip" href="#main">Skip to content</a>
+<header class="gnav">
+  <div class="wrap">
+    <a class="brand" href="#overview" aria-label="Waste Wearable Art, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M9 23c0-6.5 3-11.5 7-14 4 2.5 7 7.5 7 14" fill="none" stroke="#30d158" stroke-width="2.8" stroke-linecap="round"/></svg>
+      Waste Wearable Art
+    </a>
+    <nav aria-label="Sections">
+      <ul class="tabs">
+        <li><a href="#overview" data-tab="overview">Overview</a></li>
+        <li><a href="#upcycle" data-tab="upcycle">Upcycle</a></li>
+        <li><a href="#recycle" data-tab="recycle">Recycle</a></li>
+        <li><a href="#repurpose" data-tab="repurpose">Repurpose</a></li>
+        <li><a href="#semesters" data-tab="semesters">Semesters</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="view" data-view="overview" aria-labelledby="ov-h">
+  <div class="hero" id="hero">
+    <div class="hero-img"><img src="img/hero.jpg" alt="A student model in a white gown of fan-folded newspaper walks the runway between rows of seated classmates, one arm raised." width="2400" height="1350" fetchpriority="high"></div>
+    <div class="hero-text"><div class="wrap">
+      <p class="eyebrow">PERF 156 · Dress in World Cultures · Texas A&amp;M University</p>
+      <h1 id="ov-h" tabindex="-1">Waste, worn.</h1>
+      <p class="sub">Trash bags, newspaper, bottle caps and old denim, rebuilt into runway fashion by students.</p>
+      <div class="cta"><a class="btn" href="#upcycle">Explore the work</a><a class="tlink" href="#semesters">Browse by semester ›</a></div>
+    </div></div>
+    <span class="scroll-cue" aria-hidden="true"></span>
+  </div>
+
+  <div class="statement" id="statement">
+    <div class="sticky"><div class="wrap">
+      <p id="words">Every piece starts as something someone threw away. A trash bag. A newspaper. A deck of cards. A pair of jeans nobody wanted. Students research a question about culture or the planet, then answer it in material and walk it down the runway. *Upcycled. *Recycled. *Repurposed.</p>
+    </div></div>
+  </div>
+
+  <section class="section" aria-labelledby="three-h">
+    <div class="wrap section-head reveal">
+      <h2 id="three-h">Three ways to<br>rethink waste.</h2>
+      <p class="lede">Every garment in the archive falls into one of three approaches. Pick one to explore.</p>
+    </div>
+    <div class="pillars">%%PILLARS%%</div>
+  </section>
+
+  <section class="section alt" aria-label="The archive in numbers">
+    <div class="wrap numbers reveal">
+      <div><strong>%%N%%</strong><span>runway pieces</span></div>
+      <div><strong>%%NS%%</strong><span>semesters</span></div>
+      <div><strong>4</strong><span>years of runway shows</span></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="show-h">
+    <div class="wrap section-head reveal">
+      <h2 id="show-h">On the runway.</h2>
+      <p class="lede">Each semester ends with a runway show, where groups present the garment and the story behind it.</p>
+    </div>
+    <ul class="gallery" id="gallery" aria-label="Runway show photos" tabindex="0">%%GALLERY%%</ul>
+    <div class="wrap gal-ctrl"><button type="button" data-g="-1" aria-label="Previous photo">‹</button><button type="button" data-g="1" aria-label="Next photo">›</button></div>
+  </section>
+
+  <section class="section alt" aria-label="About the course">
+    <div class="wrap about">
+      <div class="reveal">
+        <h2>About the course.</h2>
+        <p>In <strong>PERF 156: Dress in World Cultures</strong>, students study dress as more than fashion. Clothing becomes a way to understand how people across the world express identity, culture, belonging, memory, status and change.</p>
+        <p>Through discussion, research, reflection and hands-on making, students examine what dress means in global contexts while building critical thinking and intercultural communication skills.</p>
+      </div>
+      <div class="reveal">
+        <h2>The Waste Wearable Art project.</h2>
+        <p>A collaborative project on fashion, sustainability and climate awareness. Groups source discarded materials, develop a concept, build the garment and present it at the end-of-semester runway show.</p>
+        <p>Instructor <strong>Dr. Grace Adinku</strong>, Theatre &amp; Performance Studies.</p>
+        <ul class="pills" aria-label="Topics"><li>Performance</li><li>Fashion</li><li>Culture</li><li>Identity</li><li>Sustainability</li><li>Global perspectives</li></ul>
+      </div>
+    </div>
+  </section>
+</section>
+
+%%CATVIEWS%%
+
+<section class="view" data-view="semesters" aria-labelledby="sem-h" hidden>
+  <div class="wrap sem-hero">
+    <p class="eyebrow">The archive</p>
+    <h1 id="sem-h" tabindex="-1">Every runway,<br>by semester.</h1>
+    <p class="lede">Choose a year, then a semester, to see every piece from that show.</p>
+  </div>
+  <div class="switch"><div class="wrap"><div class="seg" role="tablist" aria-label="Year">%%YEARBTNS%%</div></div></div>
+  <div class="wrap">%%YEARS%%</div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Pieces are credited by group and semester. Every garment was designed and built collaboratively by students in PERF 156 at Texas A&amp;M University.</p>
+    <p>Photos from the Waste Wearable Art runway shows. Pieces without a photo yet are shown with a placeholder.</p>
+    <nav aria-label="Footer"><a href="#overview">Overview</a><a href="#upcycle">Upcycle</a><a href="#recycle">Recycle</a><a href="#repurpose">Repurpose</a><a href="#semesters">Semesters</a></nav>
+  </div>
+</footer>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-t">
+  <button class="close" type="button" aria-label="Close" data-close>×</button>
+  <div class="sheet-in">
+    <div class="sheet-media" id="sheet-media" tabindex="0" aria-label="Photos"></div>
+    <div class="sheet-body">
+      <p class="credit" id="sheet-c"></p>
+      <h2 id="sheet-t"></h2>
+      <p class="blurb" id="sheet-b"></p>
+      <div class="dots" id="sheet-dots" aria-hidden="true"></div>
+      <h4>Design concept</h4>
+      <p class="concept" id="sheet-x"></p>
+      <h4 id="sheet-mh">Materials</h4>
+      <ul class="mats" id="sheet-m" aria-labelledby="sheet-mh"></ul>
+    </div>
+  </div>
+</dialog>
+
+<script>
+var PIECES=%%DATA%%;
+(function(){
+  document.body.classList.remove('no-js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var views=[].slice.call(document.querySelectorAll('.view'));
+  var tabs=[].slice.call(document.querySelectorAll('.tabs a'));
+  var NAMES={overview:'Waste Wearable Art',upcycle:'Upcycle',recycle:'Recycle',repurpose:'Repurpose',semesters:'Semesters'};
+
+  /* Reveal on scroll */
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.12}):null;
+  function observe(root){[].slice.call(root.querySelectorAll('.reveal:not(.in)')).forEach(function(el){io?io.observe(el):el.classList.add('in')})}
+
+  /* Semester switcher */
+  var yearBtns=[].slice.call(document.querySelectorAll('.seg button'));
+  var years=[].slice.call(document.querySelectorAll('.year'));
+  function showSem(y,t,push){
+    if(!y)y=yearBtns[0].dataset.year;
+    yearBtns.forEach(function(b){var on=b.dataset.year===y;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1});
+    var panel=null;years.forEach(function(p){var on=p.dataset.year===y;p.hidden=!on;if(on)panel=p});
+    if(!panel)return showSem(null,null,push);
+    var tbs=[].slice.call(panel.querySelectorAll('.terms button'));
+    if(!t||!tbs.some(function(b){return b.dataset.term===t}))t=tbs[0].dataset.term;
+    tbs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.term===t)});
+    [].slice.call(panel.querySelectorAll('.term')).forEach(function(g){g.hidden=g.dataset.term!==t});
+    observe(panel);
+    var h='#semesters/'+t.toLowerCase()+'-'+y;
+    if(push&&location.hash!==h)history.replaceState(null,'',h);
+  }
+  yearBtns.forEach(function(b,i){
+    b.addEventListener('click',function(){showSem(b.dataset.year,null,true)});
+    b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();var n=yearBtns[(i+d+yearBtns.length)%yearBtns.length];n.focus();n.click()});
+  });
+  years.forEach(function(p){[].slice.call(p.querySelectorAll('.terms button')).forEach(function(b){b.addEventListener('click',function(){showSem(p.dataset.year,b.dataset.term,true)})})});
+
+  /* Router */
+  function route(){
+    var h=(location.hash||'#overview').slice(1).split('/');
+    var v=NAMES[h[0]]?h[0]:'overview';
+    var prev=document.querySelector('.view:not([hidden])');
+    views.forEach(function(s){s.hidden=s.dataset.view!==v});
+    tabs.forEach(function(a){a.dataset.tab===v?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
+    document.title=v==='overview'?'Waste Wearable Art':NAMES[v]+' · Waste Wearable Art';
+    if(v==='semesters'){var m=(h[1]||'').match(/^(spring|fall)-(\d{4})$/);showSem(m?m[2]:null,m?m[1].charAt(0).toUpperCase()+m[1].slice(1):null,false)}
+    var cur=document.querySelector('.view:not([hidden])');
+    observe(cur);
+    if(prev&&prev!==cur){window.scrollTo(0,0);var hd=cur.querySelector('h1');if(hd)hd.focus({preventScroll:true})}
+    onScroll();
+  }
+  window.addEventListener('hashchange',route);
+
+  /* Hero zoom and word-by-word statement */
+  var hero=document.getElementById('hero'),st=document.getElementById('statement'),wordsEl=document.getElementById('words');
+  var words=[];
+  wordsEl.innerHTML=wordsEl.textContent.split(/\s+/).map(function(w){var hl=w.charAt(0)==='*';return '<span class="w'+(hl?' hl':'')+'">'+(hl?w.slice(1):w)+'</span>'}).join(' ');
+  words=[].slice.call(wordsEl.querySelectorAll('.w'));
+  var ticking=false;
+  function onScroll(){
+    if(ticking||reduce)return;ticking=true;
+    requestAnimationFrame(function(){
+      ticking=false;
+      if(hero.offsetParent===null)return;
+      var vh=window.innerHeight,y=window.scrollY;
+      hero.style.setProperty('--p',Math.min(1,Math.max(0,y/vh)).toFixed(3));
+      var r=st.getBoundingClientRect(),span=st.offsetHeight-vh;
+      var prog=Math.min(1,Math.max(0,(-r.top+vh*.25)/(span*.85)));
+      var n=Math.round(prog*words.length);
+      words.forEach(function(w,i){w.classList.toggle('on',i<n)});
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  if(reduce)words.forEach(function(w){w.classList.add('on')});
+
+  /* Gallery arrows */
+  var gal=document.getElementById('gallery');
+  [].slice.call(document.querySelectorAll('.gal-ctrl button')).forEach(function(b){b.addEventListener('click',function(){var li=gal.querySelector('li');gal.scrollBy({left:(li.offsetWidth+20)*+b.dataset.g,behavior:reduce?'auto':'smooth'})})});
+
+  /* Detail sheet */
+  var sheet=document.getElementById('sheet'),media=document.getElementById('sheet-media'),dots=document.getElementById('sheet-dots'),opener=null;
+  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+  function open(id){
+    var p=PIECES[id];if(!p)return;
+    document.getElementById('sheet-c').innerHTML='<span class="cat-tag" data-cat="'+p.k+'">'+p.cat+'</span> · '+esc(p.c);
+    document.getElementById('sheet-t').textContent=p.t;
+    document.getElementById('sheet-b').textContent=p.b;
+    document.getElementById('sheet-x').textContent=p.x;
+    document.getElementById('sheet-m').innerHTML=p.m.map(function(m){return '<li>'+esc(m)+'</li>'}).join('');
+    media.innerHTML=p.i.length?p.i.map(function(im){return '<img src="'+im.s+'" alt="'+esc(im.a)+'" width="880" height="1100">'}).join(''):'<div class="ph" data-fam="'+p.fam+'" role="img" aria-label="Photo coming soon"><span>'+esc(p.f)+'</span><small>Runway photo coming soon</small></div>';
+    media.scrollLeft=0;
+    dots.innerHTML=p.i.length>1?p.i.map(function(_,i){return '<span'+(i?'':' class="on"')+'></span>'}).join('')+'':'';
+    dots.hidden=p.i.length<2;
+    media.setAttribute('aria-label',p.i.length>1?p.i.length+' photos, scroll sideways for more':'Photo');
+    if(typeof sheet.showModal==='function')sheet.showModal();else sheet.setAttribute('open','');
+    sheet.querySelector('.sheet-body').scrollTop=0;
+  }
+  media.addEventListener('scroll',function(){var i=Math.round(media.scrollLeft/media.clientWidth);[].slice.call(dots.children).forEach(function(d,k){d.classList.toggle('on',k===i)})},{passive:true});
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-open]');if(b){opener=b;open(b.dataset.open)}});
+  sheet.addEventListener('click',function(e){if(e.target===sheet||e.target.closest('[data-close]'))sheet.close()});
+  sheet.addEventListener('close',function(){if(opener)opener.focus()});
+
+  route();
+})();
+</script>
+</body>
+</html>
