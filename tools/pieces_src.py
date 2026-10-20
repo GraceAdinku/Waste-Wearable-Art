@@ -30,7 +30,7 @@ dict(sem="Fall 2025",grp="Group 18",fam="fabric",title="Throwback to the Decades
  mats=["Fabric offcuts","Satin","Thrifted jacket","Thrifted pants","Fabric glue","Staples"],
  blurb="A runway look inspired by Freddie Mercury’s fearless 1980s stage style, turning discarded fabrics into bold texture, colour and movement.",
  concept="The group layered hundreds of 3-inch fabric strips onto a thrifted black jacket as “feathers,” starting with warm colours at the hem and moving to cool colours at the shoulders. Thrifted white pants were covered front and back with squares of recycled fabric, and a belt was made from reused ribbon. The jacket was designed to be pulled off for a dramatic moment on the runway.",
- imgs=[("f25-g18.jpg","A model walks the runway in a cropped jacket covered in loops of fabric strips, cool blues and teals at the shoulders shading to greens, yellows, oranges and reds at the hem and cuffs, worn with a black top and cream wide-leg pants patched with diamond-shaped printed fabric."),
+ imgs=[("f25-g18-main.jpg","A smiling model walks the runway past seated students in a denim jacket worn over the shoulders and a long denim skirt with a front slit, both decorated with stitched patches, ribbon bows and appliqué stars, with a black top and black heels."),
        ("f25-g18a.jpg","A model with arms spread shows off a jacket covered in looped fabric strips in a rainbow of colours, worn with a black top and white pants patterned with patches of colourful fabric."),
        ("f25-g18b.jpg","The same model mid-turn on the runway, the rainbow fabric-strip jacket flaring at the sleeves.")]),
 dict(sem="Fall 2025",grp="Group 19",fam="paper",title="Second Life: Newspaper in Motion",

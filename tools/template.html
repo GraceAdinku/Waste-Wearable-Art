@@ -172,10 +172,11 @@ h1:focus{outline:none}
 .cat-hero .lede{animation-delay:.15s}
 @media (max-width:760px){.cat-hero-in{grid-template-columns:1fr}.cat-hero-img{max-width:300px;order:-1}}
 .features{display:flex;flex-direction:column;gap:clamp(72px,10vw,130px);padding-bottom:clamp(80px,10vw,140px)}
-.feature{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.feature{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
 .feature.flip .feature-media{order:2}
-.feature-media{padding:0;border:0;background:none;cursor:zoom-in;border-radius:28px;overflow:hidden;display:block;aspect-ratio:4/5;width:100%}
-.feature-media img,.feature-media .ph{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.feature-media{padding:0;border:0;background:none;cursor:zoom-in;border-radius:28px;overflow:hidden;display:block;width:100%}
+.feature-media .ph{aspect-ratio:4/5}
+.feature-media img,.feature-media .ph{width:100%;height:auto;display:block;transition:transform 1.2s var(--ease)}
 .feature-media:hover img{transform:scale(1.04)}
 .credit{margin:0;color:var(--muted);font-size:15px;font-weight:600;letter-spacing:-.01em}
 .feature h3{font-size:clamp(34px,4.4vw,56px);line-height:1.04;margin:10px 0 16px;letter-spacing:-.04em}
@@ -224,7 +225,9 @@ dialog.sheet[open]{animation:pop .45s var(--ease)}
 .sheet-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);max-height:calc(100svh - 48px)}
 .sheet-media{background:#000;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;position:relative}
 .sheet-media::-webkit-scrollbar{display:none}
-.sheet-media img,.sheet-media .ph{flex:0 0 100%;width:100%;height:100%;max-height:calc(100svh - 48px);object-fit:cover;scroll-snap-align:start;aspect-ratio:4/5}
+.sheet-media{align-items:center}
+.sheet-media img,.sheet-media .ph{flex:0 0 100%;width:100%;height:100%;max-height:calc(100svh - 48px);object-fit:contain;scroll-snap-align:start}
+.sheet-media .ph{aspect-ratio:4/5;object-fit:cover}
 .sheet-body{padding:44px 40px 40px;overflow-y:auto}
 .sheet-body h2{font-size:clamp(30px,3.4vw,40px);line-height:1.06;margin:8px 0 14px;letter-spacing:-.04em}
 .sheet-body h4{margin:26px 0 8px;font-size:15px;color:var(--muted);font-weight:600}
@@ -463,7 +466,7 @@ var PIECES=%%DATA%%;
     document.getElementById('sheet-b').textContent=p.b;
     document.getElementById('sheet-x').textContent=p.x;
     document.getElementById('sheet-m').innerHTML=p.m.map(function(m){return '<li>'+esc(m)+'</li>'}).join('');
-    media.innerHTML=p.i.length?p.i.map(function(im){return '<img src="'+im.s+'" alt="'+esc(im.a)+'" width="880" height="1100">'}).join(''):'<div class="ph" data-fam="'+p.fam+'" role="img" aria-label="Photo coming soon"><span>'+esc(p.f)+'</span><small>Runway photo coming soon</small></div>';
+    media.innerHTML=p.i.length?p.i.map(function(im){return '<img src="'+im.s+'" alt="'+esc(im.a)+'" width="'+im.w+'" height="'+im.h+'">'}).join(''):'<div class="ph" data-fam="'+p.fam+'" role="img" aria-label="Photo coming soon"><span>'+esc(p.f)+'</span><small>Runway photo coming soon</small></div>';
     media.scrollLeft=0;
     dots.innerHTML=p.i.length>1?p.i.map(function(_,i){return '<span'+(i?'':' class="on"')+'></span>'}).join('')+'':'';
     dots.hidden=p.i.length<2;

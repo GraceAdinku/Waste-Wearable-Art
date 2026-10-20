@@ -46,6 +46,10 @@ SHOW = [
     ("show-s24-group.jpg", "Spring 2024", "The whole class on stage after the show.", "Students and their instructor gather on stage in their finished garments beneath a projected runway show poster."),
 ]
 
+from PIL import Image
+IMG = os.path.join(HERE, "..", "img") if os.path.basename(HERE) == "tools" else os.path.join(HERE, "site", "img")
+def SIZE(f): return Image.open(os.path.join(IMG, f)).size
+
 def key(p): return (p["sem"], p["grp"])
 for p in P:
     if key(p) in EXTRA and not p["imgs"]:
@@ -58,7 +62,8 @@ def media(p, cls="", eager=False):
     if p["imgs"]:
         f, a = p["imgs"][0]
         lz = "" if eager else ' loading="lazy"'
-        return f'<img class="{cls}" src="img/{f}" alt="{E(a)}" width="880" height="1100"{lz} decoding="async">'
+        w, h = SIZE(f)
+        return f'<img class="{cls}" src="img/{f}" alt="{E(a)}" width="{w}" height="{h}"{lz} decoding="async">'
     return (f'<div class="ph {cls}" data-fam="{p["fam"]}" role="img" aria-label="Photo coming soon">'
             f'<span>{E(FAM[p["fam"]])}</span><small>Runway photo coming soon</small></div>')
 
@@ -134,7 +139,7 @@ gallery = "".join(f'''<li><figure><img src="img/{f}" alt="{E(a)}" loading="lazy"
 import json
 DATA = {p["id"]: dict(t=p["title"], c=f'{p["grp"]} · {p["sem"]}', cat=CATS[p["cat"]]["name"], k=p["cat"],
         b=p["blurb"], x=p["concept"], m=p["mats"], f=FAM[p["fam"]], fam=p["fam"],
-        i=[dict(s="img/" + f, a=a) for f, a in p["imgs"]]) for p in P}
+        i=[dict(s="img/" + f, a=a, w=SIZE(f)[0], h=SIZE(f)[1]) for f, a in p["imgs"]]) for p in P}
 
 tpl = open(os.path.join(HERE, "template.html")).read()
 out = (tpl.replace("%%CATVIEWS%%", cat_views).replace("%%YEARBTNS%%", year_btns).replace("%%YEARS%%", panels)
