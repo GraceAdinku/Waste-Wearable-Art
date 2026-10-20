@@ -30,7 +30,7 @@ CAT = {
 CATS = {
     "upcycle": dict(name="Upcycle", line="Waste, elevated.",
         lede="Upcycling turns something discarded into something worth more than it ever was. Newspaper becomes a gala gown. Shower curtains become a coral reef.",
-        img="s26-g16a.jpg"),
+        img="upcycle-hero.jpg"),
     "recycle": dict(name="Recycle", line="Single use. Second life.",
         lede="Recycling takes throwaway plastics such as shopping bags, bottles, straws and caps, and puts them back into the cycle as yarn, scales and sea foam.",
         img="recycle-hero.jpg"),
