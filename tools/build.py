@@ -36,7 +36,7 @@ CATS = {
         img="recycle-hero.jpg"),
     "repurpose": dict(name="Repurpose", line="Same object. New job.",
         lede="Repurposing gives a thing a new role without breaking it down. A thrifted jacket, a vinyl record, a deck of playing cards or a pair of old jeans becomes part of a look.",
-        img="f25-g18a.jpg"),
+        img="f25-g18.jpg"),
 }
 FAM = {"plastic": "Plastic", "paper": "Paper", "fabric": "Fabric and denim", "mixed": "Mixed materials"}
 SHOW = [
