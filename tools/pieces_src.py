@@ -44,7 +44,7 @@ dict(sem="Spring 2025",grp="Group 8",fam="mixed",title="From Tailored Elegance t
 dict(sem="Spring 2025",grp="Group 13",fam="plastic",title="Tides of Plastic",
  mats=["Plastic shopping bags","Plastic bag yarn","Water bottles"],
  blurb="Inspired by the Great Pacific Garbage Patch, a crocheted mesh dress made from plastic bag yarn that looks like the fishing nets polluting the ocean.",
- concept="The group hand-spun shopping bags into yarn and crocheted it into a net-like mesh. Crumpled bags at the hem suggest sea foam and waves, and cut, coloured water bottle pieces stand in for floating debris. The piece asks viewers to face the scale of marine pollution and imagine new ways to reuse and act.",imgs=[]),
+ concept="The group hand-spun shopping bags into yarn and crocheted it into a net-like mesh. Crumpled bags at the hem suggest sea foam and waves, and cut, coloured water bottle pieces stand in for floating debris. The piece asks viewers to face the scale of marine pollution and imagine new ways to reuse and act.",imgs=[("s25-g13.jpg","A model stands on a blue-lit stage in a long-sleeved dress of white crocheted net, with a full ruffled hem of crumpled white plastic bags dotted with colour, worn with black boots.")]),
 dict(sem="Spring 2025",grp="Group 20",fam="plastic",title="Drowned in Plastic",
  mats=["Plastic bags","Plastic bottles","Discarded plastics"],
  blurb="A marine-inspired garment that looks beautiful from a distance and troubling up close, revealing sea life overwhelmed by human waste.",
