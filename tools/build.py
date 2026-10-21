@@ -41,7 +41,7 @@ CATS = {
 FAM = {"plastic": "Plastic", "paper": "Paper", "fabric": "Fabric and denim", "mixed": "Mixed materials"}
 SHOW = [
     ("hero.jpg", "Fall 2025", "A runway walk through the audience in a fan-folded newspaper gown.", "A model in a white newspaper gown walks between rows of seated students, arm raised."),
-    ("show-f25-train.jpg", "Fall 2025", "A plastic gown with a long painted train sweeps the floor.", "A model in a blue and white plastic gown with a long train stands in front of a seated audience."),
+    ("show-f25-train.jpg", "Ocean in Distress.", "A trash-bag gown with a long train sweeps across the floor.", "A model in a blue and white plastic gown with a long train stands in front of a seated audience."),
     ("show-s24-hat.jpg", "Spring 2024", "A red top hat and a sash of reused material take the stage.", "A performer in a red top hat, red sleeves and white trousers with a sash of crumpled material strikes a pose on stage."),
     ("show-s24-group.jpg", "Spring 2024", "The whole class on stage after the show.", "Students and their instructor gather on stage in their finished garments beneath a projected runway show poster."),
 ]
