@@ -25,7 +25,7 @@ CAT = {
     ("Spring 2023", "Group 21"): "recycle", ("Spring 2023", "Group 22"): "recycle",
     ("Spring 2026", "Group 5"): "repurpose", ("Spring 2026", "Group 19"): "repurpose",
     ("Fall 2025", "Group 18"): "repurpose", ("Spring 2025", "Group 8"): "repurpose",
-    ("Fall 2023", "Honors project"): "repurpose",
+    ("Fall 2023", "Honors project"): "repurpose", ("Fall 2025", "Runway look"): "repurpose",
 }
 CATS = {
     "upcycle": dict(name="Upcycle", line="Waste, elevated.",
