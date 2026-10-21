@@ -40,7 +40,7 @@ dict(sem="Fall 2025",grp="Group 19",fam="paper",title="Second Life: Newspaper in
 dict(sem="Spring 2025",grp="Group 8",fam="mixed",title="From Tailored Elegance to Fast Fashion",
  mats=["Discarded vinyl records","90s band T-shirts","Old beads and bangles","Cassette tapes"],
  blurb="A period-style dress rebuilt from 1990s castoffs, tracing fashion’s shift from hand-tailored garments to mass-produced, disposable clothing.",
- concept="A corset-like bodice is made from discarded records, and a full skirt from repurposed 90s band T-shirts. Jewelry from old beads and bangles adds to the retro look. By mixing 1800s silhouettes with 1990s pop culture, the piece asks viewers to think about labour, waste and the environmental cost of fast fashion.",imgs=[]),
+ concept="A corset-like bodice is made from discarded records, and a full skirt from repurposed 90s band T-shirts. Jewelry from old beads and bangles adds to the retro look. By mixing 1800s silhouettes with 1990s pop culture, the piece asks viewers to think about labour, waste and the environmental cost of fast fashion.",imgs=[("s25-g8.jpg","The dress displayed on a dress form: a strapless bodice of black vinyl records with coloured centre labels, over a full tiered skirt of cut band T-shirts, ribbons and rainbow tulle, with Queen and Darkest Hour shirt prints at the hem.")]),
 dict(sem="Spring 2025",grp="Group 13",fam="plastic",title="Tides of Plastic",
  mats=["Plastic shopping bags","Plastic bag yarn","Water bottles"],
  blurb="Inspired by the Great Pacific Garbage Patch, a crocheted mesh dress made from plastic bag yarn that looks like the fishing nets polluting the ocean.",
