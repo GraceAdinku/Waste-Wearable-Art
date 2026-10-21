@@ -33,7 +33,7 @@ CATS = {
         img="upcycle-hero.jpg"),
     "recycle": dict(name="Recycle", line="Single use. Second life.",
         lede="Recycling takes throwaway plastics such as shopping bags, bottles, straws and caps, and puts them back into the cycle as yarn, scales and sea foam.",
-        img="recycle-hero.jpg"),
+        img="recycle-hero2.jpg"),
     "repurpose": dict(name="Repurpose", line="Same object. New job.",
         lede="Repurposing gives a thing a new role without breaking it down. A thrifted jacket, a vinyl record, a deck of playing cards or a pair of old jeans becomes part of a look.",
         img="repurpose-hero.jpg"),
