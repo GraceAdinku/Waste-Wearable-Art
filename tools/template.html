@@ -144,6 +144,12 @@ h1:focus{outline:none}
 .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;background:#111}
 .gallery figcaption{margin-top:14px;color:var(--muted);font-size:17px;max-width:36em}
 .gallery figcaption strong{color:var(--ink);font-weight:600}
+.process{list-style:none;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:28px 24px}
+.process figure{margin:0}
+.process img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:22px;background:#111}
+.process figcaption{margin-top:12px;color:var(--muted);font-size:16px;line-height:1.45}
+.process figcaption strong{color:var(--ink);font-weight:600}
+@media (max-width:640px){.process{grid-template-columns:1fr;gap:24px}.process img{border-radius:18px}}
 .gal-ctrl{display:flex;justify-content:flex-end;gap:12px;margin-top:22px}
 .gal-ctrl button{width:44px;height:44px;border-radius:50%;border:0;background:color-mix(in srgb,var(--ink) 10%,transparent);cursor:pointer;font-size:22px;line-height:1;display:grid;place-items:center}
 .gal-ctrl button:hover{background:color-mix(in srgb,var(--ink) 16%,transparent)}
@@ -383,7 +389,20 @@ footer nav a:hover{text-decoration:underline}
     <div class="wrap gal-ctrl"><button type="button" data-g="-1" aria-label="Previous photo">‹</button><button type="button" data-g="1" aria-label="Next photo">›</button></div>
   </section>
 
-  <section class="section alt" aria-label="About the course">
+  <section class="section alt" aria-labelledby="proc-h">
+    <div class="wrap section-head reveal">
+      <h2 id="proc-h">Behind the seams.</h2>
+      <p class="lede">Before the runway come weeks of sorting, cutting and testing. Groups work together in the studio to turn piles of waste into material they can build with.</p>
+    </div>
+    <ul class="wrap process">
+      <li class="reveal"><figure><img src="img/process-1.jpg" alt="Four students around a table heaped with crumpled newspaper, one holding up a sheet of plastic while another types notes on a laptop." width="1200" height="900" loading="lazy"><figcaption><strong>Planning with paper.</strong> A group sorts a mountain of newspaper and plastic sheeting while one member records the plan.</figcaption></figure></li>
+      <li class="reveal"><figure><img src="img/process-2.jpg" alt="Students at a long table cutting plastic bottles into small pieces, with grocery bags of bottles spread across the table." width="1200" height="900" loading="lazy"><figcaption><strong>Cutting it down.</strong> Plastic bottles and grocery bags are cut into small pieces that become texture and trim.</figcaption></figure></li>
+      <li class="reveal"><figure><img src="img/process-3.jpg" alt="Students in the costume studio laying out sheets of fabric and plastic on a large cutting table, with rope and black plastic nearby." width="1200" height="900" loading="lazy"><figcaption><strong>Laying it out.</strong> In the costume studio, a group lays out fabric, rope and plastic to test shapes before anything is sewn.</figcaption></figure></li>
+      <li class="reveal"><figure><img src="img/process-4.jpg" alt="Smiling students unpacking large bags of collected plastic water bottles onto a studio worktable." width="1200" height="900" loading="lazy"><figcaption><strong>Collecting the waste.</strong> Bags of empty water bottles, gathered by the group, are sorted on the worktable.</figcaption></figure></li>
+    </ul>
+  </section>
+
+  <section class="section" aria-label="About the course">
     <div class="wrap about">
       <div class="reveal">
         <h2>About the course.</h2>
