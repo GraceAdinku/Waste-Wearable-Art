@@ -64,7 +64,8 @@ button{font:inherit;color:inherit}
   .tabs{width:100%;display:flex;justify-content:space-between;gap:0;padding-bottom:6px}
   .tabs a{padding:0 7px;letter-spacing:-.01em;min-height:38px;display:flex;align-items:center;justify-content:center;font-size:12.5px;text-align:center}
 }
-@media (max-width:370px){.tabs a{font-size:12px;padding:0 4px}}
+@media (max-width:640px){.gnav .wrap{padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right))}}
+@media (max-width:430px){.tabs a{font-size:12px;padding:0 4px}}
 @media (max-width:330px){.tabs a{font-size:11px;padding:0 2px}}
 
 /* Shared type */
@@ -252,6 +253,25 @@ footer nav{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:12px}
 footer nav a{color:var(--ink);text-decoration:none}
 footer nav a:hover{text-decoration:underline}
 
+/* About the instructor */
+.about-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,6vw,80px);align-items:start;padding-block:clamp(56px,8vw,110px)}
+.about-photo{margin:0;border-radius:32px;overflow:hidden;position:sticky;top:calc(var(--navh,53px) + 24px);box-shadow:0 30px 60px -24px rgba(10,60,160,.45);animation:float-in 1.2s var(--ease) both}
+.about-photo img{width:100%;height:auto;display:block}
+.about-text h1{font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.045em;background:linear-gradient(90deg,#2463eb,#2997ff 55%,#e0560f);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.06em}
+.about-text .eyebrow{color:#2463eb}
+.about-text .about-role{margin:16px 0 0;color:var(--muted);font-size:19px;font-weight:600;color:var(--muted);line-height:1.4}
+.about-text .pills{margin:20px 0 32px}
+.about-text .about-lead{max-width:none;font-size:clamp(22px,2.4vw,28px);line-height:1.3;font-weight:600;letter-spacing:-.025em;margin:0 0 32px;color:var(--ink)}
+.about-text h2{line-height:1.15;font-size:clamp(24px,2.6vw,30px);letter-spacing:-.03em;margin:36px 0 10px}
+.about-text p{font-size:19px;color:var(--ink);opacity:.86;margin:0 0 14px;max-width:36em}
+.about-text p.about-lead,.about-text p.eyebrow,.about-text p.about-role{opacity:1}
+.about-text blockquote{margin:28px 0 36px;padding:4px 0 4px 22px;border-left:4px solid;border-image:linear-gradient(180deg,#30d158,#2997ff,#ff9f0a) 1;font-size:clamp(20px,2.2vw,24px);line-height:1.4;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
+.tlink-ink{color:var(--link)}
+.about-more{margin-top:18px}
+.about-more a{font-size:19px;text-decoration:none}
+.about-more a:hover{text-decoration:underline}
+@media (max-width:760px){.about-in{grid-template-columns:1fr;padding-block:28px 72px}.about-photo{position:static;max-width:420px;width:100%;margin:0 auto;border-radius:24px}}
+
 /* Phones */
 @media (max-width:640px){
   body{font-size:16px}
@@ -308,11 +328,12 @@ footer nav a:hover{text-decoration:underline}
     </a>
     <nav aria-label="Sections">
       <ul class="tabs">
-        <li><a href="#overview" data-tab="overview">Overview</a></li>
+        <li><a href="#overview" data-tab="overview">Home</a></li>
         <li><a href="#upcycle" data-tab="upcycle">Upcycle</a></li>
         <li><a href="#recycle" data-tab="recycle">Recycle</a></li>
         <li><a href="#repurpose" data-tab="repurpose">Repurpose</a></li>
         <li><a href="#semesters" data-tab="semesters">Semesters</a></li>
+        <li><a href="#about" data-tab="about">About</a></li>
       </ul>
     </nav>
   </div>
@@ -372,7 +393,8 @@ footer nav a:hover{text-decoration:underline}
       <div class="reveal">
         <h2>The Waste Wearable Art project.</h2>
         <p>A collaborative project on fashion, sustainability and climate awareness. Groups source discarded materials, develop a concept, build the garment and present it at the end-of-semester runway show.</p>
-        <p>Instructor <strong>Dr. Grace Adinku</strong>, Theatre &amp; Performance Studies.</p>
+        <p>Instructor <strong>Dr. Grace Uchechukwu Adinku</strong>, Theatre &amp; Performance Studies.</p>
+        <p class="about-more"><a href="#about">Meet the instructor ›</a></p>
         <ul class="pills" aria-label="Topics"><li>Performance</li><li>Fashion</li><li>Culture</li><li>Identity</li><li>Sustainability</li><li>Global perspectives</li></ul>
       </div>
     </div>
@@ -390,13 +412,31 @@ footer nav a:hover{text-decoration:underline}
   <div class="switch"><div class="wrap"><div class="seg" role="tablist" aria-label="Year">%%YEARBTNS%%</div></div></div>
   <div class="wrap">%%YEARS%%</div>
 </section>
+<section class="view" data-view="about" aria-labelledby="about-h" hidden>
+  <div class="wrap about-in">
+    <figure class="about-photo"><img src="img/instructor.jpg" alt="Dr. Grace Uchechukwu Adinku smiling outdoors in a knee-length dress of blue and white batik with colourful embroidered lace panels, worn with a pearl necklace, glasses and black heeled sandals." width="1100" height="1789"></figure>
+    <div class="about-text">
+      <p class="eyebrow">About the instructor</p>
+      <h1 id="about-h" tabindex="-1">Dr. Grace Uchechukwu Adinku</h1>
+      <p class="about-role">Senior Lecturer, Theatre and Performance Studies<br>Texas A&amp;M University</p>
+      <ul class="pills" aria-label="Areas of expertise"><li>Costume design</li><li>African textiles</li><li>Cultural performance</li></ul>
+      <p class="about-lead">My teaching and research explore how dress communicates identity, preserves cultural memory, and connects people to their communities and histories.</p>
+      <h2>PERF 156: Dress in World Cultures</h2>
+      <p>In this course, students explore dress and body practices across diverse societies, examining how culture, history, beliefs, social relationships, and the environment shape what people wear. I encourage students to look beyond appearance and understand dress as a meaningful expression of human experience.</p>
+      <h2>The Waste Wearable Art project</h2>
+      <p>One part of this learning is the Waste Wearable Art project, which challenges students to transform discarded materials into wearable designs while examining the environmental impact of fast fashion.</p>
+      <blockquote>Through creative experimentation, students turn waste into a call to action, inviting us to rethink consumption, embrace repair and reuse, and make more thoughtful choices about what we wear and discard.</blockquote>
+      <div class="cta"><a class="btn" href="#semesters">See the students’ work</a><a class="tlink tlink-ink" href="#upcycle">Explore by approach ›</a></div>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="wrap">
     <p>Pieces are credited by group and semester. Every garment was designed and built collaboratively by students in PERF 156 at Texas A&amp;M University.</p>
     <p>Photos from the Waste Wearable Art runway shows. Pieces without a photo yet are shown with a placeholder.</p>
-    <nav aria-label="Footer"><a href="#overview">Overview</a><a href="#upcycle">Upcycle</a><a href="#recycle">Recycle</a><a href="#repurpose">Repurpose</a><a href="#semesters">Semesters</a></nav>
+    <nav aria-label="Footer"><a href="#overview">Home</a><a href="#upcycle">Upcycle</a><a href="#recycle">Recycle</a><a href="#repurpose">Repurpose</a><a href="#semesters">Semesters</a><a href="#about">About the instructor</a></nav>
   </div>
 </footer>
 
@@ -424,7 +464,7 @@ var PIECES=%%DATA%%;
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var views=[].slice.call(document.querySelectorAll('.view'));
   var tabs=[].slice.call(document.querySelectorAll('.tabs a'));
-  var NAMES={overview:'Waste Wearable Art',upcycle:'Upcycle',recycle:'Recycle',repurpose:'Repurpose',semesters:'Semesters'};
+  var NAMES={overview:'Waste Wearable Art',upcycle:'Upcycle',recycle:'Recycle',repurpose:'Repurpose',semesters:'Semesters',about:'About'};
 
   /* Keep sticky bars below the nav, whose height changes on phones */
   var gnav=document.querySelector('.gnav');
