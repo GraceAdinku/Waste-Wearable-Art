@@ -12,7 +12,7 @@ P = ns["P"]
 
 # Photos matched from the "single Images for posters" folder (by semester in filename + description).
 EXTRA = {
-    ("Fall 2025", "Group 19"): [("f25-g19.jpg", "A model in a white dress of layered, fan-folded newspaper tiers raises a paper wand and holds a pleated paper fan, walking a runway between rows of seated audience.")],
+    ("Fall 2025", "Group 19"): [("f25-g19-fan.jpg", "A model stands with hands on hips in a fitted newspaper corset dress with a pearl necklace, framed by a huge pleated fan of folded newspaper behind her shoulders, the skirt flaring at the hem into layers of folded newspaper."), ("f25-g19.jpg", "A model in a white dress of layered, fan-folded newspaper tiers raises a paper wand and holds a pleated paper fan, walking a runway between rows of seated audience.")],
     ("Spring 2025", "Group 20"): [("s25-g20.jpg", "A model poses on stage in a teal satin wrap over a dress covered in clear, curling plastic ribbons and sparkling scales that catch the blue stage light.")],
     ("Spring 2024", "Group 9"): [("s24-g9.jpg", "A model stands on a dark stage in a strapless gown with a full skirt of clear, shimmering plastic over ruffled red coral-like layers, lit in blue and pink.")],
 }
