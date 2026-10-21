@@ -64,5 +64,5 @@ dict(sem="Spring 2023",grp="Group 21",fam="plastic",title="Ocean in Distress",
 dict(sem="Spring 2023",grp="Group 22",fam="mixed",title="Polluted Waters, Living Forms",
  mats=["Plastic bottle caps","Plastic straws","Plastic wrap","Thrifted dress"],
  blurb="A fish-inspired dress built on a thrifted gown, with bottle caps as scales and plastic straws forming a sculptural shell and tail.",
- concept="The thrifted base dress was altered to fit the model. Bottle caps were attached as fish scales, and layered straws over plastic wrap and fabric supports form the shell and tail, adding depth, movement and colour. The piece holds the beauty of sea creatures against the plastics that threaten them.",imgs=[]),
+ concept="The thrifted base dress was altered to fit the model. Bottle caps were attached as fish scales, and layered straws over plastic wrap and fabric supports form the shell and tail, adding depth, movement and colour. The piece holds the beauty of sea creatures against the plastics that threaten them.",imgs=[("s23-g22.jpg","The finished dress displayed on a dress form in a gallery: a pink bodice of layered plastic straws, a black middle section netted with white bottle caps, and a flared tail of blue plastic straws.")]),
 ]
