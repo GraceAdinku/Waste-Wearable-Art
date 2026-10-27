@@ -145,10 +145,38 @@ tpl = open(os.path.join(HERE, "template.html")).read()
 
 # Beyond the Classroom: wearables featured in performance.
 # Each entry: show, date, venue, blurb, credit (group and semester only), img, alt
-PERFS = []
+PERFS = [
+    dict(
+        kicker="From classroom to concert stage",
+        show="When wearable art meets music",
+        sub="Student-created sustainable fashion featured in a musical performance at Loyola Marymount University, Los Angeles",
+        piece=("Tides of Plastic", "Group 13 · Spring 2025", "spring-2025-group-13"),
+        imgs=[("perf-plastic-1.jpg", "Clarinetist Virginia Figueiredo plays on a wooden stage wearing a white crocheted mesh dress made from plastic bag yarn over a black underdress, with a full ruffled hem of crumpled white plastic bags dotted with coloured plastic pieces."),
+              ("perf-plastic-2.jpg", "Virginia Figueiredo performs at a music stand in a dim concert hall, wearing the white plastic mesh dress with its ruffled plastic-bag hem, as audience members watch from the front rows.")],
+        body=["A recycled-plastic garment created by students in Dr. Grace Uchechukwu Adinku’s <em>PERF 156: Dress in World Cultures</em> course at Texas A&amp;M University recently found a new purpose on the concert stage.",
+              "Clarinetist <strong>Virginia Figueiredo</strong> wore the student-created wearable art during her performance of Jeff’s musical composition <em>Plastic</em> at Loyola Marymount University in Los Angeles. The composition addresses the growing environmental concern of plastic pollution in our oceans.",
+              "Recognizing the connection between the composition’s environmental message and Dr. Adinku’s Waste Wearable Art initiative, Virginia incorporated the garment into her performance, creating a compelling visual relationship between music, costume, and environmental awareness.",
+              "Constructed from discarded plastic materials, the garment transformed waste into an expressive artistic statement. Its presence on stage reinforced the composition’s environmental theme, inviting audiences to consider the consequences of plastic consumption and disposal.",
+              "This collaboration demonstrates how creative work developed in a university classroom can extend into professional artistic spaces, connecting sustainable fashion, music, and performance to engage wider audiences in conversations about environmental responsibility."],
+        quote="When discarded materials become wearable art, and wearable art becomes part of a musical performance, creativity gives environmental concerns a powerful visual presence.",
+        meta="Performance: <em>Plastic</em>, Loyola Marymount University, Los Angeles. Photographs courtesy of Virginia Figueiredo.",
+    ),
+]
+def perf_html(x):
+    t, credit, pid = x["piece"]
+    imgs = "".join(f'<figure><img src="img/{f}" alt="{E(a)}" width="1200" height="1500" loading="lazy"></figure>' for f, a in x["imgs"])
+    body = "".join(f"<p>{p}</p>" for p in x["body"])
+    return f'''<article class="sfeat">
+<header class="sfeat-head reveal"><p class="eyebrow">{E(x["kicker"])}</p><h2>{E(x["show"])}</h2><p class="sfeat-sub">{E(x["sub"])}</p></header>
+<div class="sfeat-photos reveal">{imgs}</div>
+<div class="sfeat-body reveal">
+<button type="button" class="sfeat-piece" data-open="{pid}"><span>The wearable</span><strong>{E(t)}</strong><span>{E(credit)} ›</span></button>
+{body}
+<blockquote>{E(x["quote"])}</blockquote>
+<p class="sfeat-meta">{x["meta"]}</p>
+</div></article>'''
 if PERFS:
-    perfs = "".join(f'''<article class="perf reveal"><figure class="perf-media"><img src="img/{x["img"]}" alt="{E(x["alt"])}" width="1200" height="1500" loading="lazy"></figure>
-<div><p class="eyebrow">{E(x["date"])} · {E(x["venue"])}</p><h2>{E(x["show"])}</h2><p>{E(x["blurb"])}</p><p class="credit">{E(x["credit"])}</p></div></article>''' for x in PERFS)
+    perfs = "".join(perf_html(x) for x in PERFS)
 else:
     perfs = '''<div class="perf-empty reveal"><h2>Coming soon.</h2><p>Productions featuring student wearables will be added here, with photos from the stage, the show and date, and the class group that made each piece.</p><a class="tlink" href="#semesters">See the runway archive ›</a></div>'''
 
