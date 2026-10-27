@@ -65,8 +65,8 @@ button{font:inherit;color:inherit}
   .tabs a{padding:0 7px;letter-spacing:-.01em;min-height:38px;display:flex;align-items:center;justify-content:center;font-size:12.5px;text-align:center}
 }
 @media (max-width:640px){.gnav .wrap{padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right))}}
-@media (max-width:430px){.tabs a{font-size:12px;padding:0 4px}}
-@media (max-width:330px){.tabs a{font-size:11px;padding:0 2px}}
+@media (max-width:430px){.tabs a{font-size:11.5px;padding:0 3px}}
+@media (max-width:330px){.tabs a{font-size:10.5px;padding:0 1px}}
 
 /* Shared type */
 .eyebrow{font-size:17px;font-weight:600;color:var(--muted);margin:0 0 10px;letter-spacing:-.01em}
@@ -173,6 +173,23 @@ h1:focus{outline:none}
 .pills li{padding:6px 14px;border-radius:980px;background:var(--card);border:1px solid var(--line);font-size:15px}
 @media (max-width:760px){.about{grid-template-columns:1fr}}
 
+/* Performance view */
+.perf-hero{padding:clamp(56px,8vw,110px) 0 clamp(40px,6vw,70px);text-align:center;background:radial-gradient(80% 110% at 50% 0%,color-mix(in srgb,#8a3ffc 16%,transparent) 0%,transparent 65%),radial-gradient(60% 80% at 100% 100%,color-mix(in srgb,#e8590c 12%,transparent) 0%,transparent 60%)}
+.perf-hero h1{font-size:clamp(44px,7vw,88px);line-height:1.02;letter-spacing:-.035em;margin:0;background:linear-gradient(90deg,#8a3ffc,#d6336c 55%,#e8590c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.perf-sub{display:block;margin-top:14px;font-size:clamp(22px,3vw,34px);letter-spacing:-.02em;color:var(--ink);-webkit-text-fill-color:var(--ink)}
+.perf-hero .lede{margin-inline:auto}
+.perf-list{display:grid;gap:clamp(48px,8vw,96px);padding-block:clamp(40px,6vw,80px) clamp(80px,10vw,140px)}
+.perf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.perf:nth-child(even) .perf-media{order:2}
+.perf-media{margin:0}
+.perf-media img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:24px;background:#111}
+.perf h2{font-size:clamp(30px,4vw,46px);line-height:1.06;margin:0 0 14px;letter-spacing:-.03em}
+.perf p{font-size:18px;line-height:1.55;color:var(--muted)}
+.perf .credit{font-size:15px;font-weight:600}
+.perf-empty{text-align:center;max-width:640px;margin:0 auto;padding:clamp(36px,6vw,64px) clamp(22px,5vw,56px);border-radius:28px;background:var(--bg-alt)}
+.perf-empty h2{font-size:clamp(26px,3.4vw,36px);margin:0 0 12px;letter-spacing:-.02em}
+.perf-empty p{color:var(--muted);font-size:18px;line-height:1.55;margin:0 0 22px}
+@media (max-width:760px){.perf{grid-template-columns:1fr}.perf:nth-child(even) .perf-media{order:0}.perf-media img{border-radius:18px}}
 /* Category views */
 .cat-hero{padding:clamp(56px,8vw,110px) 0 clamp(60px,8vw,110px);background:radial-gradient(90% 120% at 85% 20%,color-mix(in srgb,var(--c2) 26%,transparent) 0%,transparent 60%),radial-gradient(70% 90% at 0% 100%,color-mix(in srgb,var(--c1) 18%,transparent) 0%,transparent 60%)}
 .view[data-view="upcycle"],.view[data-view="recycle"],.view[data-view="repurpose"]{background:linear-gradient(180deg,transparent 0,color-mix(in srgb,var(--vc) 7%,var(--bg)) 40%,var(--bg) 100%)}
@@ -349,6 +366,7 @@ footer nav a:hover{text-decoration:underline}
         <li><a href="#recycle" data-tab="recycle">Recycle</a></li>
         <li><a href="#repurpose" data-tab="repurpose">Repurpose</a></li>
         <li><a href="#semesters" data-tab="semesters">Semesters</a></li>
+        <li><a href="#performance" data-tab="performance">Stage</a></li>
         <li><a href="#about" data-tab="about">About</a></li>
       </ul>
     </nav>
@@ -700,6 +718,17 @@ footer nav a:hover{text-decoration:underline}
 <img class="" src="img/s23-g22.jpg" alt="The finished dress displayed on a dress form in a gallery: a pink bodice of layered plastic straws, a black middle section netted with white bottle caps, and a flared tail of blue plastic straws." width="1100" height="1375" loading="lazy" decoding="async"><span class="tile-cap"><span class="cat-tag" data-cat="recycle">Recycle</span>
 <strong>Polluted Waters, Living Forms</strong><span class="credit">Group 22</span></span></button></li></ul></div></div></div>
 </section>
+<section class="view" data-view="performance" aria-labelledby="perf-h" hidden>
+  <div class="perf-hero">
+    <div class="wrap">
+      <p class="eyebrow">On stage</p>
+      <h1 id="perf-h" tabindex="-1">Beyond the Classroom<span class="perf-sub">Wearable Arts in Performance</span></h1>
+      <p class="lede">Some of the wearables made in PERF 156 go on to a second life on stage. This is where you can find the pieces that have been featured in theatre, dance and live performance, with the productions they appeared in.</p>
+    </div>
+  </div>
+  <div class="wrap perf-list"><div class="perf-empty reveal"><h2>Coming soon.</h2><p>Productions featuring student wearables will be added here, with photos from the stage, the show and date, and the class group that made each piece.</p><a class="tlink" href="#semesters">See the runway archive ›</a></div></div>
+</section>
+
 <section class="view" data-view="about" aria-labelledby="about-h" hidden>
   <div class="wrap about-in">
     <figure class="about-photo"><img src="img/instructor.jpg" alt="Dr. Grace Uchechukwu Adinku smiling outdoors in a knee-length dress of blue and white batik with colourful embroidered lace panels, worn with a pearl necklace, glasses and black heeled sandals." width="1100" height="1789"></figure>
@@ -724,7 +753,7 @@ footer nav a:hover{text-decoration:underline}
   <div class="wrap">
     <p>Pieces are credited by group and semester. Every garment was designed and built collaboratively by students in PERF 156 at Texas A&amp;M University.</p>
     <p>Photos from the Waste Wearable Art runway shows. Pieces without a photo yet are shown with a placeholder.</p>
-    <nav aria-label="Footer"><a href="#overview">Home</a><a href="#upcycle">Upcycle</a><a href="#recycle">Recycle</a><a href="#repurpose">Repurpose</a><a href="#semesters">Semesters</a><a href="#about">About the instructor</a></nav>
+    <nav aria-label="Footer"><a href="#overview">Home</a><a href="#upcycle">Upcycle</a><a href="#recycle">Recycle</a><a href="#repurpose">Repurpose</a><a href="#semesters">Semesters</a><a href="#performance">On Stage</a><a href="#about">About the instructor</a></nav>
   </div>
 </footer>
 
@@ -752,7 +781,7 @@ var PIECES={"spring-2026-group-1": {"t": "Four Seasons Leaf Gown", "c": "Group 1
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var views=[].slice.call(document.querySelectorAll('.view'));
   var tabs=[].slice.call(document.querySelectorAll('.tabs a'));
-  var NAMES={overview:'Waste Wearable Art',upcycle:'Upcycle',recycle:'Recycle',repurpose:'Repurpose',semesters:'Semesters',about:'About'};
+  var NAMES={overview:'Waste Wearable Art',upcycle:'Upcycle',recycle:'Recycle',repurpose:'Repurpose',semesters:'Semesters',performance:'Beyond the Classroom',about:'About'};
 
   /* Keep sticky bars below the nav, whose height changes on phones */
   var gnav=document.querySelector('.gnav');

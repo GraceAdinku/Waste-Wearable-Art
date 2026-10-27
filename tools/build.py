@@ -142,7 +142,17 @@ DATA = {p["id"]: dict(t=p["title"], c=f'{p["grp"]} · {p["sem"]}', cat=CATS[p["c
         i=[dict(s="img/" + f, a=a, w=SIZE(f)[0], h=SIZE(f)[1]) for f, a in p["imgs"]]) for p in P}
 
 tpl = open(os.path.join(HERE, "template.html")).read()
-out = (tpl.replace("%%CATVIEWS%%", cat_views).replace("%%YEARBTNS%%", year_btns).replace("%%YEARS%%", panels)
+
+# Beyond the Classroom: wearables featured in performance.
+# Each entry: show, date, venue, blurb, credit (group and semester only), img, alt
+PERFS = []
+if PERFS:
+    perfs = "".join(f'''<article class="perf reveal"><figure class="perf-media"><img src="img/{x["img"]}" alt="{E(x["alt"])}" width="1200" height="1500" loading="lazy"></figure>
+<div><p class="eyebrow">{E(x["date"])} · {E(x["venue"])}</p><h2>{E(x["show"])}</h2><p>{E(x["blurb"])}</p><p class="credit">{E(x["credit"])}</p></div></article>''' for x in PERFS)
+else:
+    perfs = '''<div class="perf-empty reveal"><h2>Coming soon.</h2><p>Productions featuring student wearables will be added here, with photos from the stage, the show and date, and the class group that made each piece.</p><a class="tlink" href="#semesters">See the runway archive ›</a></div>'''
+
+out = (tpl.replace("%%CATVIEWS%%", cat_views).replace("%%PERFS%%", perfs).replace("%%YEARBTNS%%", year_btns).replace("%%YEARS%%", panels)
        .replace("%%PILLARS%%", pillars).replace("%%GALLERY%%", gallery).replace("%%N%%", str(len(P)))
        .replace("%%NS%%", str(sum(len(v) for v in terms.values())))
        .replace("%%DATA%%", json.dumps(DATA, ensure_ascii=False).replace("</", "<\\/")))
